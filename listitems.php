@@ -27,7 +27,7 @@ $r = mysql_query( "SELECT * FROM item ORDER BY name, type;" );
     echo '<tr>';
     echo '<td>' . $row['name'] . '</td>';
     echo '<td>' . $row['type'] . '</td>';
-    echo '<td>' . $row['desc'] . '</td>';
+    echo '<td>' . $row['descr'] . '</td>';
     echo '</tr>';
   }
   ?>

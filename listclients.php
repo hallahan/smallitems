@@ -10,9 +10,7 @@ $r = mysql_query( "SELECT * FROM client;" );
 <body>
 <h1>Small Items Checkout - Clients</h1>
 
-<p>
 <?php include("menu.php"); ?>
-</p>
 
 <table>
   <tr>
