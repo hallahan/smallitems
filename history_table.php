@@ -2,7 +2,6 @@
 
 include 'dbsetup.php';
 
-$checkout_query = "SELECT * FROM checkout JOIN client USING( client_id ) ORDER BY checkout_time DESC;";
 
 function itemsForCheckout( $checkout_id )
 {
@@ -20,7 +19,7 @@ $r = mysql_query( $checkout_query );
 
 <html>
 <body>
-<h1>Small Items Checkout - Checkout History</h1>
+<h1>Small Items Checkout - <?php $header_name ?> </h1>
 
 <p>
 <?php include("menu.php"); ?>
