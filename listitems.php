@@ -10,9 +10,7 @@ $r = mysql_query( "SELECT * FROM item ORDER BY name, type;" );
 <body>
 <h1>Small Items Checkout - Items</h1>
 
-<p>
 <?php include("menu.php"); ?>
-</p>
 
 <table>
   <tr>

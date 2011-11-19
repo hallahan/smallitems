@@ -1,12 +1,5 @@
 <?php
 include 'dbsetup.php';
-
-/*
-$typeval = $_POST[type];
-$tstrlen = strlen($typeval);
-if ($tstrlen == 0)
-  $typeval = 'null';
-*/
 ?>
 
 <html>
@@ -29,8 +22,6 @@ else
   echo '<h3>Unable to add item to database!</h3>';
   echo '<p>Error: ' . mysql_error() . '</p>';
 }
-
-
 
 echo $_POST[name] . " ";
 echo $_POST[type] . '<br />';

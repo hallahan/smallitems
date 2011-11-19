@@ -38,6 +38,5 @@ $r = mysql_query( "SELECT * FROM client;" );
 
 </table>
 
-
 </body>
 </html>

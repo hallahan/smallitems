@@ -1,6 +1,9 @@
 <?php 
 
 /*
+REQUIRED VARS PRE SET:
+  $checkout_query (string)
+  $header_name    (string)
 This is a macro file of sorts. For this to work, define the string
 $checkout_query with a query selecting * from checkout joined with client.
 eg:
@@ -11,6 +14,7 @@ That will give you the complete history of all checkouts in the database.
 */
 
 include 'dbsetup.php';
+
 
 function itemsForCheckout( $checkout_id )
 {
@@ -28,11 +32,9 @@ $r = mysql_query( $checkout_query );
 
 <html>
 <body>
-<h1>Small Items Checkout - <?php $header_name ?> </h1>
+<h1>Small Items Checkout - <?php echo $header_name ?> </h1>
 
-<p>
 <?php include("menu.php"); ?>
-</p>
 
 <table>
   <tr>
