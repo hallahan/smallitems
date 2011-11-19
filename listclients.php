@@ -1,12 +1,6 @@
 <?php
 
-$con = mysql_connect("db.cecs.pdx.edu","hallahan","sempervirens");
-if (!$con)
-{
-  die('could not connect to db: ' . mysql_error() );
-}
-
-mysql_select_db("hallahan",$con);
+include 'dbsetup.php';
 
 $r = mysql_query( "SELECT * FROM client;" );
 
@@ -16,7 +10,9 @@ $r = mysql_query( "SELECT * FROM client;" );
 <body>
 <h1>Small Items Checkout - Clients</h1>
 
-<?php include 'menu.php'; ?>
+<p>
+<?php include("menu.php"); ?>
+</p>
 
 <table>
   <tr>
