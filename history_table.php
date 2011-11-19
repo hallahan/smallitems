@@ -1,7 +1,16 @@
 <?php 
 
-include 'dbsetup.php';
+/*
+This is a macro file of sorts. For this to work, define the string
+$checkout_query with a query selecting * from checkout joined with client.
+eg:
+$checkout_query = "SELECT * FROM checkout JOIN client USING( client_id ) ORDER BY checkout_time DESC;";
 
+That will give you the complete history of all checkouts in the database.
+
+*/
+
+include 'dbsetup.php';
 
 function itemsForCheckout( $checkout_id )
 {
