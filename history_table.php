@@ -30,51 +30,53 @@ $r = mysql_query( $checkout_query );
 
 ?>
 
-<html>
+
+
 <body>
-<h1>Small Items Checkout - <?php echo $header_name ?> </h1>
 
 <?php include("menu.php"); ?>
-
-<table>
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Items</th>
-    <th>Returned</th>
-    <th>Checkout Time</th>
-    <th>Return Time</th>
-    <th>Notes</th>
-  </tr>
-
-  <?php 
-  while( $row = mysql_fetch_array($r) )
-  {
-    echo '<tr>';
-    echo '<td>' . $row['first_name'] . '</td>';
-    echo '<td>' . $row['last_name'] . '</td>';
-
-    echo '<td>';
-    //echo 'test';
-
-    $coitems = itemsForCheckout( $row['checkout_id'] );
-    while( $itemrow = mysql_fetch_array( $coitems ) )
-    {
-      echo $itemrow['name'] .  ' ' . $itemrow['type']  . '<br/>';
-    }
-
-    echo '</td>';
-    
-    echo '<td>' . $row['returned'] . '</td>';
-    echo '<td>' . $row['checkout_time'] . '</td>';
-    echo '<td>' . $row['return_time'] . '</td>';
-    echo '<td>' . $row['notes'] . '</td>';
-    echo '</tr>';
-  }
-  ?>
-
-</table>
-
+<div id="wrapper">
+	<table>
+		<h1> <?php echo $header_name ?> </h1>
+		
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Items</th>
+			<th>Returned</th>
+			<th>Checkout Time</th>
+			<th>Return Time</th>
+			<th>Notes</th>
+		</tr>
+	
+		<?php 
+		while( $row = mysql_fetch_array($r) )
+		{
+			echo '<tr>';
+			echo '<td>' . $row['first_name'] . '</td>';
+			echo '<td>' . $row['last_name'] . '</td>';
+	
+			echo '<td>';
+			//echo 'test';
+	
+			$coitems = itemsForCheckout( $row['checkout_id'] );
+			while( $itemrow = mysql_fetch_array( $coitems ) )
+			{
+				echo $itemrow['name'] .  ' ' . $itemrow['type']  . '<br/>';
+			}
+	
+			echo '</td>';
+			
+			echo '<td>' . $row['returned'] . '</td>';
+			echo '<td>' . $row['checkout_time'] . '</td>';
+			echo '<td>' . $row['return_time'] . '</td>';
+			echo '<td>' . $row['notes'] . '</td>';
+			echo '</tr>';
+		}
+		?>
+	
+	</table>
+</div>
 
 </body>
 </html>

@@ -1,0 +1,127 @@
+body {
+	background-color: white;
+	background-attachment: fixed;
+}
+
+a {
+    color: black;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    background-color:  #e0e0e0;
+}
+
+a:active {
+    text-decoration: none
+    background-color: #e0e0e0;
+   
+}
+
+h1 {
+	text-align: center;
+	font-family: "Apple Gothic", "Segoe UI Semibold", Helvetica, sans-serif;
+	text-shadow: lightgray 2px 2px 4px;
+	font-weight:lighter;
+	color:#333;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-size:1.7em;
+}
+
+h2 {
+	text-align: center;
+	font-family: "Apple Gothic", "Segoe UI Semibold", Helvetica, sans-serif;
+	color: black;
+	text-shadow: lightgray 1px 1px 2px;
+}
+
+
+legend
+        {
+        font-weight:lighter;
+        font-family:"Apple Gothic", "Segoe UI Semibold", Helvetica, sans-serif;
+        text-align:left;
+        /*margin-top:1em;*/
+        color:#333;
+        text-transform:uppercase;
+        letter-spacing:1px;
+        font-size:1.2em;
+        line-height:1.5em;
+        
+        }
+        
+fieldset
+        {
+        text-align:left;
+
+				border:3px double #ccc;
+        -webkit-border-radius:8px;
+        -moz-border-radius:8px;
+        border-radius:8px;
+        
+        }
+        
+
+h3 {
+	font-family: "Apple Gothic", "Segoe UI Semibold", Helvetica, sans-serif;
+	color: black;
+	text-shadow: lightgray 1px 1px 2px;
+}
+
+#wrapper {
+/*
+	border: thin #FFCC00 solid;
+*/
+	/*width: 800px;*/
+	/*margin-right: auto;*/
+	margin-left: 190;
+	font-family: "Apple Gothic", "Segoe UI Semibold", Helvetica, sans-serif;
+	/*
+color: black;
+	background-color: blue;
+*/
+}
+
+.intro {
+	padding: 5px;
+	
+}
+.photoElement {
+	padding: 5px;
+	margin: 0px 0px 5px 0px;
+}
+
+img {
+	margin: 5px;
+}
+
+.elementLeft {
+	float: left
+}
+
+.elementRight {
+	float: right
+}
+
+
+#menu {
+  position: fixed;
+/*  border: 3px double #FFCC00;*/
+  /*background: #e0e0e0;*/
+  left: 5;
+  top: 0;
+  width: 175;
+  padding: 5;
+  font-family: "Apple Gothic", "Segoe UI Semibold", Helvetica, sans-serif;
+
+}

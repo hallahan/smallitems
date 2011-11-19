@@ -1,4 +1,5 @@
 <?php 
+include 'start.php';
 
 $header_name = "Checkouts Due Today";
 
