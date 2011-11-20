@@ -39,14 +39,14 @@ $r = mysql_query( $checkout_query );
 	<table>
 		<h1> <?php echo $header_name ?> </h1>
 		
-		<tr class = "odd">
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>Items</th>
-			<th>Returned</th>
-			<th>Checkout Time</th>
-			<th>Return Time</th>
-			<th>Notes</th>
+		<tr>
+			<th scope="col">First Name</th>
+			<th scope="col">Last Name</th>
+			<th scope="col">Items</th>
+			<th scope="col">Returned</th>
+			<th scope="col">Checkout Time</th>
+			<th scope="col">Return Time</th>
+			<th scope="col">Notes</th>
 		</tr>
 	
 		<?php 
