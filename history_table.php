@@ -39,7 +39,7 @@ $r = mysql_query( $checkout_query );
 	<table>
 		<h1> <?php echo $header_name ?> </h1>
 		
-		<tr>
+		<tr class = "odd">
 			<th>First Name</th>
 			<th>Last Name</th>
 			<th>Items</th>
@@ -50,9 +50,14 @@ $r = mysql_query( $checkout_query );
 		</tr>
 	
 		<?php 
+ 		$odd = 1;
 		while( $row = mysql_fetch_array($r) )
 		{
-			echo '<tr>';
+			if ( ($odd % 2) == 0) 
+				echo '<tr class = "odd">';
+			else
+				echo '<tr>';
+				
 			echo '<td>' . $row['first_name'] . '</td>';
 			echo '<td>' . $row['last_name'] . '</td>';
 	
@@ -72,6 +77,8 @@ $r = mysql_query( $checkout_query );
 			echo '<td>' . $row['return_time'] . '</td>';
 			echo '<td>' . $row['notes'] . '</td>';
 			echo '</tr>';
+
+			$odd++;
 		}
 		?>
 	
