@@ -1,11 +1,11 @@
 /* ---- ( iTunes CSS ) ---- */
 table { 
-	font: 80% "Apple Gothic", "Segoe UI Semibold", Helvetica, sans-serif;
+	font: 90% "Apple Gothic", "Segoe UI Semibold", Helvetica, sans-serif;
 	color: #000;
 	text-align: left;
 	border-collapse: collapse;
-	border: 1px solid #666666;
-	border-top: none;	
+	border: 1px solid #ccc;
+/*	border-top: none;	*/
 }
 table a {
 	text-decoration: underline;
@@ -44,11 +44,11 @@ caption {
 table th {
 	font-size: 105%;
 	color: #000;
-	background: #ffffff url(tbar.gif) repeat-x;
+	background: #ebf3ff repeat-x;
 	height: 33px;
 }
 table th:hover {
-	background: #ffffff url(tbov.gif) repeat-x;
+	background: #3d80df /*url(tbov.gif)*/ repeat-x;
 	
 }
 tr {
@@ -58,7 +58,7 @@ tr,th,td {
 	padding: .75em;
 }
 td {
-	border-left: 1px solid #dadada;
+	border-left: 1px solid #ccc;
 }
 tfoot tr {
 	background: #fff url(bbar.gif) repeat-x;
