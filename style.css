@@ -33,7 +33,7 @@ h1 {
 	text-shadow: lightgray 2px 2px 4px;
 	font-weight:lighter;
 	color:#333;
-  text-transform:uppercase;
+  /*text-transform:uppercase;*/
   letter-spacing:1px;
   font-size:1.7em;
 }
@@ -83,7 +83,7 @@ h3 {
 	border: thin #FFCC00 solid;
 */
 	/*width: 800px;*/
-	/*margin-right: auto;*/
+	margin-right: 10;
 	margin-left: 190;
 	font-family: "Apple Gothic", "Segoe UI Semibold", Helvetica, sans-serif;
 	/*
@@ -125,3 +125,5 @@ img {
   font-family: "Apple Gothic", "Segoe UI Semibold", Helvetica, sans-serif;
 
 }
+
+
