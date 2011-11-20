@@ -1,12 +1,15 @@
-<html>
+<?php
+include 'start.php'
+?>
+
 <body>
-
-<h1>Small Items Checkout - New Checkout</h1>
-
-<?php include("menu.php"); ?>
-
-<h2> to do </h2>
-
+<div id="wrapper">
+	<h1>New Checkout</h1>
+	
+	<?php include("menu.php"); ?>
+	
+	<h2> to do </h2>
+</div>
 
 </body>
 </html>

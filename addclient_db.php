@@ -1,12 +1,18 @@
 <?php
 include 'dbsetup.php';
+include 'start.php';
+
 ?>
 <html>
 <body>
+<?php
+include("menu.php");
+?>
+<div id="wrapper">
 <h1>Small Items Checkout</h1>
 
 <?php
-include("menu.php");
+
 
 $sql= "INSERT INTO client (first_name, last_name, psu_id, phone, email, notes)
         VALUES ('$_POST[first_name]','$_POST[last_name]','$_POST[psu_id]',
@@ -33,7 +39,7 @@ echo $_POST[email] . '<br />';
 echo $_POST[notes] . '<br />';
 ?>
 
-
+</div>
 </body>
 </html>
 

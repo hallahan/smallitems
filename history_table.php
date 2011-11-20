@@ -50,10 +50,10 @@ $r = mysql_query( $checkout_query );
 		</tr>
 	
 		<?php 
- 		$odd = 1;
+ 		$odd = 0;
 		while( $row = mysql_fetch_array($r) )
 		{
-			if ( ($odd % 2) == 0) 
+			if ( ($odd % 2) == 1) 
 				echo '<tr class = "odd">';
 			else
 				echo '<tr>';

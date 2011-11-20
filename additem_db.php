@@ -1,13 +1,19 @@
 <?php
 include 'dbsetup.php';
+include 'start.php';
 ?>
 
-<html>
+
 <body>
-<h1>Small Items Checkout</h1>
+<div id="wrapper">
 
 <?php
 include("menu.php");
+?>
+<div id="wrapper">
+<h1>Small Items Checkout</h1>
+
+<?php
 
 $sql= "INSERT INTO item (name, type, descr)
         VALUES ('$_POST[name]', '$_POST[type]', '$_POST[descr]' );";
@@ -29,6 +35,6 @@ echo $_POST[descr] . '<br />';
 
 ?>
 
-
+</div>
 </body>
 </html>
