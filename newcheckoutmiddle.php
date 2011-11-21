@@ -6,12 +6,10 @@
 	</fieldset>
 	<fieldset>
 		<legend>Item</legend>
-		
-		<div id="stylized" class="myform">
 		<form>
 			<input type="text" name="searchclient" size="50" />
 			<input type="button" value="Search"/>
-			<br class="clear"/>
+			<br />
 				<select multiple name="music" size="10" >
 					<option value="emo" selected>Emo</option>
 					<option value="metal/rock" >Metal/Rock sdfg sdfg dsfg sdfg sdfgsfd</option>
@@ -25,11 +23,9 @@
 					<option value="techno" >Techno</option>
 				</select>
 				<input type="button" value="Add New Item" />
-				<br class="clear"/>
+				<br />
 			<input type="button" value="Select" />
 		</form>
-		</div>
-		
 	</fieldset>
 	<fieldset>
 		<legend>Time/Details</legend>
