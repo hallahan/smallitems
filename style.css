@@ -92,12 +92,19 @@ h3 {
 	text-shadow: lightgray 1px 1px 2px;
 }
 
+#top {
+	background: red;
+	width: 100%;
+	top: 0;
+	bottom: 60;
+}
+
 #menu {
   position: fixed;
   /*border: thin #FFCC00 solid;*/
   /*background: #e0e0e0;*/
   left: 5;
-  top: 0;
+  top: 8;
   width: 175;
   /*padding: 5;*/
   line-height: 1.3em;
@@ -127,9 +134,14 @@ h3 {
 #staging {
 	position: fixed;
 	/*border: thin #FFCC00 solid;*/
-	top: 0;
+	top: 8;
+/*
 	right: 5;
 	width: 300px;
+*/
+	
+	left: 655;
+	width:300;
 }
 
 .intro {

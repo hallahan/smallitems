@@ -25,5 +25,15 @@
 		<h2>Notes:</h2>
 		This reservation will be out for a very very long time, but that is ok, because
 		this client is very very special and powerful.
+		
+		<br/>
+		
+		<table align="right" >
+				<tr>
+					<td width="80">
+						<input type="button" value="Submit"/>
+					</td>
+				</tr>
+		 </table>
 	</fieldset>
 </div>

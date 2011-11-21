@@ -1,5 +1,5 @@
 <div id="middle">
-	<h1>New Checkout</h1>
+	<!-- <h1>New Checkout</h1> -->
 	<form action = "newcheckout_db.php" method = "post">
 		<fieldset>
 			<legend>Client</legend>
@@ -29,18 +29,17 @@
 						</select>
 					</td>
 					<td width="80">
-						<input type="button" value="Add New Item" />
+						<input type="button" value="Add New Client" />
 					</td>
 				</tr>
 			</table>
-			<table class="silent">
+			<table class="silent align="right" >
 				<tr>
-					<td width="220"></td>
 					<td width="80">
-						<input type="button" value="Select" />
+						<input type="button" value="Select"/>
 					</td>
 				</tr>
-			</table>
+		 </table>
 			
 		</fieldset>
 		
@@ -77,17 +76,16 @@
 					</td>
 				</tr>
 			</table>
-			<table class="silent">
+			<table class="silent align="right" >
 				<tr>
-					<td width="140"></td>
 					<td width="80">
-						<input type="button" value="Clear" />
+						<input type="button" value="Clear"/>
 					</td>
 					<td width="80">
-						<input type="button" value="Add" />
+						<input type="button" value="Add"/>
 					</td>
 				</tr>
-			</table>
+		 </table>
 			
 		</fieldset>
 		
@@ -147,18 +145,18 @@
 			<label for="comments">Comments:</label>
 			<textarea rows="4" cols="55" placeholder:"Details Regarding Checkout"></textarea>
 			
+			<table class="silent" align="right" >
+				<tr>
+					<td width="80">
+						<input type="button" value="Clear"/>
+					</td>
+					<td width="80">
+						<input type="button" value="Add"/>
+					</td>
+				</tr>
+		 </table>
 	 </fieldset>
 	 
-	 <table align="right" >
-	 	<tr>
-	 		<td width="80">
-	 			<input type="button" value="Reset"/>
-	 		</td>
-	 		<td width="80">
-	 			<input type="button" value="Submit"/>
-	 		</td>
-	 	</tr>
-	 </table>
 	 
 	</form>
 	<p>&nbsp; </p>
