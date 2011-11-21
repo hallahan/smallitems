@@ -6,6 +6,8 @@
 	</fieldset>
 	<fieldset>
 		<legend>Item</legend>
+		
+		<div id="stylized" class="myform">
 		<form>
 			<input type="text" name="searchclient" size="50" />
 			<input type="button" value="Search"/>
@@ -26,6 +28,8 @@
 				<br class="clear"/>
 			<input type="button" value="Select" />
 		</form>
+		</div>
+		
 	</fieldset>
 	<fieldset>
 		<legend>Time/Details</legend>
