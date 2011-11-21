@@ -3,32 +3,92 @@
 	<fieldset>
 		<legend>Client</legend>
 		
+		<table class="silent">
+			<tr>
+				<td width="300">
+					<input type="text" name="searchclient" />
+				</td>
+				<td width="80">
+					<input type="button" value="Search"/>
+				</td>
+			</tr>
+			<tr>
+				<td width="300">
+					<select multiple name="music" size="10" >
+						<option value="emo" selected>Emo</option>
+						<option value="metal/rock" >Metal/Rock sdfg sdfg dsfg sdfg sdfgsfd</option>
+						<option value="hiphop" >Hip Hop</option>
+						<option value="ska" >Ska</option>
+						<option value="jazz" >Jazz</option>
+						<option value="country" >Country</option>
+						<option value="classical" >Classical</option>
+						<option value="alternative" >Alternative</option>
+						<option value="oldies" >Oldies</option>
+						<option value="techno" >Techno</option>
+					</select>
+				</td>
+				<td width="80">
+					<input type="button" value="Add New Item" />
+				</td>
+			</tr>
+		</table>
+		<table class="silent">
+			<tr>
+				<td width="220"></td>
+				<td width="80">
+					<input type="button" value="Select" />
+				</td>
+			</tr>
+		</table>
+		
 	</fieldset>
+	
+	
 	<fieldset>
 		<legend>Item</legend>
-		<form>
-			<input type="text" name="searchclient" size="50" />
-			<input type="button" value="Search"/>
-			<br />
-				<select multiple name="music" size="10" >
-					<option value="emo" selected>Emo</option>
-					<option value="metal/rock" >Metal/Rock sdfg sdfg dsfg sdfg sdfgsfd</option>
-					<option value="hiphop" >Hip Hop</option>
-					<option value="ska" >Ska</option>
-					<option value="jazz" >Jazz</option>
-					<option value="country" >Country</option>
-					<option value="classical" >Classical</option>
-					<option value="alternative" >Alternative</option>
-					<option value="oldies" >Oldies</option>
-					<option value="techno" >Techno</option>
-				</select>
-				<input type="button" value="Add New Item" />
-				<br />
-			<input type="button" value="Select" />
-		</form>
+		
+		<table class="silent">
+			<tr>
+				<td width="300">
+					<input type="text" name="searchclient" />
+				</td>
+				<td width="80">
+					<input type="button" value="Search"/>
+				</td>
+			</tr>
+			<tr>
+				<td width="300">
+					<select multiple name="music" size="10" >
+						<option value="emo" selected>Emo</option>
+						<option value="metal/rock" >Metal/Rock sdfg sdfg dsfg sdfg sdfgsfd</option>
+						<option value="hiphop" >Hip Hop</option>
+						<option value="ska" >Ska</option>
+						<option value="jazz" >Jazz</option>
+						<option value="country" >Country</option>
+						<option value="classical" >Classical</option>
+						<option value="alternative" >Alternative</option>
+						<option value="oldies" >Oldies</option>
+						<option value="techno" >Techno</option>
+					</select>
+				</td>
+				<td width="80">
+					<input type="button" value="Add New Item" />
+				</td>
+			</tr>
+		</table>
+		<table class="silent">
+			<tr>
+				<td width="220"></td>
+				<td width="80">
+					<input type="button" value="Select" />
+				</td>
+			</tr>
+		</table>
+		
 	</fieldset>
+	
+	
 	<fieldset>
 		<legend>Time/Details</legend>
-		
 	</fieldset>
 </div>

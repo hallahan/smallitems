@@ -152,11 +152,19 @@ img {
 	float: right
 }
 
+input, select {
+	width: 100%;
+}
 
 table.silent {
+	border-style: none;
 	text-align:right;
 	vertical-align:top;
 	padding:5px;
+}
+
+table.silent td {
+	vertical-align: top;
 }
 
 
