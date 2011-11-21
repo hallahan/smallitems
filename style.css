@@ -120,7 +120,8 @@ h3 {
 	/*border: thin #FFCC00 solid;*/
 	top: 0;
 	margin-left: 180;
-	margin-right:305;
+	/*margin-right:305;*/
+	width: 460;
 }
 
 #staging {
@@ -158,15 +159,32 @@ input, select {
 
 table.silent {
 	border-style: none;
-	text-align:right;
 	vertical-align:top;
 	padding:5px;
 }
 
 table.silent td {
 	vertical-align: top;
+	text-align:left;
 }
 
+label {
+	text-align: right;
+}
 
-
-
+.w2em
+        {
+        width:3em;
+        }
+.w4em
+        {
+        width:5em;
+        }
+.w8em
+        {
+        width:9em;
+        }
+.w16em
+        {
+        width:17em;
+        }
