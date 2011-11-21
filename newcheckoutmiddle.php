@@ -1,6 +1,6 @@
 <?php
 $clients = get_all_clients_list();
-$items = get_all_items_list();
+// $items = get_all_items_list();
 $formatstr = '<option value="%d" >%s</option>';
 ?>
 
@@ -29,7 +29,6 @@ foreach( $clients as $c )
 	printf( $formatstr, $c['client_id'], $c['client_name'] );
 }
 ?>
-
 						</select>
 					</td>
 					<td width="95">
