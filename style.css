@@ -152,17 +152,30 @@ img {
 	float: right
 }
 
-
 label, input, select, textarea {
-	width: 100%
+	display: block;
+	/*width: 200px;*/
+	float: left;
+	margin-bottom: 1em;
+	
 }
 
+select {
+  width: 330px;
+  
+}
 
-table.blank {
-	border-style: none;
+label {
 	text-align: right;
-	padding: 5px;
+	/*width: 100px;*/
+	padding-right: 2em;
 }
+
+
+.clear {
+	clear: both;
+}
+
 
 
 
