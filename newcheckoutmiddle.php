@@ -1,6 +1,6 @@
 <?php
 $clients = get_all_clients_list();
-// $items = get_all_items_list();
+$items = get_all_items_list();
 $formatstr = '<option value="%d" >%s</option>';
 ?>
 
@@ -63,16 +63,12 @@ foreach( $clients as $c )
 				<tr>
 					<td width="300">
 						<select multiple name="music" size="10" >
-							<option value="emo" selected>Emo</option>
-							<option value="metal/rock" >Metal/Rock sdfg sdfg dsfg sdfg sdfgsfd</option>
-							<option value="hiphop" >Hip Hop</option>
-							<option value="ska" >Ska</option>
-							<option value="jazz" >Jazz</option>
-							<option value="country" >Country</option>
-							<option value="classical" >Classical</option>
-							<option value="alternative" >Alternative</option>
-							<option value="oldies" >Oldies</option>
-							<option value="techno" >Techno</option>
+<?php
+foreach( $items as $c )
+{
+	printf( $formatstr, $c['id'], $c['name'] );
+}
+?>
 						</select>
 					</td>
 					<td width="95">

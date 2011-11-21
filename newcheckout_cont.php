@@ -21,21 +21,26 @@ include 'dbsetup.php';
  	return $clients;
  }
 
-// function get_all_items_list( )
-// {
-// 	$items_query = "SELECT * FROM item ORDER BY name, type;"
-// 	$items_res = mysql_query( $items_query );
-// 	
-// 	while ( $item_row = mysql_fetch_array( $items_res ) )
-// 	{
-// 	$item_names = array();
-// 	$item_name = $item_row['name'] . ' (' . $item_row['type'] . ')';
-// 	$item_names.push( $item_name );
-// 	
-// 	}
-// 	return $item_names;
-// }
-
+function get_all_items_list( )
+{
+ 	$query = "SELECT * FROM item ORDER BY name, type;";
+ 	$res = mysql_query( $query );
+ 	
+ 	$items = array();
+ 	while( $row = mysql_fetch_array( $res ) )
+ 	{
+ 		$id_name_tuple = array();
+  	$id = $row['item_id'];
+  	if ( $row['type'] )
+  		$name = $row['name'] . ' (' . $row['type'] . ')';
+  	else
+  		$name = $row['name'];
+ 		$id_name_tuple['id'] = $id;
+ 		$id_name_tuple['name'] = $name;
+ 		array_push( $items, $id_name_tuple );
+ 	}
+ 	return $items;
+ }
 //TODO not finished
 // function search_clients_list( $search_string )
 // {
