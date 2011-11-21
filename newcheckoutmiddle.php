@@ -90,5 +90,28 @@
 	
 	<fieldset>
 		<legend>Time/Details</legend>
-	</fieldset>
+		
+		<ul>
+				<li>Creating a static (inline) datepicker</li>
+				<li>Filling the entire grid with dates</li>
+				<li>Enabling the selection of all dates rendered within the grid</li>
+				<li>Testing the <code>enable</code> and <code>disable</code> methods</li>
+			</ul>
+			<label for="demo-10">Date</label> <input type="text" class="w16em" id="demo-10" name="demo-10" value="" />
+			<button onclick="datePickerController.disable('demo-10'); return false;">Disable</button> <button onclick="datePickerController.enable('demo-10'); return false;">Enable</button> 
+		</fieldset>
+		<script>
+datePickerController.createDatePicker({                            
+				formElements:{"demo-10":"%d/%m/%Y"},
+				showWeeks:true,
+				statusFormat:"%l, %d %F %Y",
+				staticPos:true,
+				fillGrid:true,
+				constrainSelection:false                  
+				});
+		</script>
+
+
 </div>
+
+
