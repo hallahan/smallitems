@@ -1,6 +1,6 @@
 body {
 	background-color: white;
-	background-attachment: fixed;
+	font-family: "Apple Gothic", "Segoe UI Semibold", Helvetica, sans-serif;
 }
 
 a {
@@ -29,7 +29,6 @@ a:active {
 
 h1 {
 	text-align: center;
-	font-family: "Apple Gothic", "Segoe UI Semibold", Helvetica, sans-serif;
 	text-shadow: lightgray 2px 2px 4px;
 	font-weight:lighter;
 	color:#333;
@@ -39,11 +38,26 @@ h1 {
 }
 
 h2 {
-	text-align: center;
-	font-family: "Apple Gothic", "Segoe UI Semibold", Helvetica, sans-serif;
-	color: black;
-	text-shadow: lightgray 1px 1px 2px;
+	text-align: left;
+	color: #666;
+	text-shadow: lightgray 2px 2px 4px;
+	font-weight: lighter;
+	font-size:1.0em;
 }
+
+p.small {
+	font-size:0.8em;
+}
+
+
+/*
+ul.small {
+	list-style-type:circle;
+	marign-left: 0; 
+	padding-left: 10px;
+	font-size:0.8em;
+}
+*/
 
 
 legend
@@ -78,18 +92,43 @@ h3 {
 	text-shadow: lightgray 1px 1px 2px;
 }
 
+#menu {
+  position: fixed;
+  /*border: thin #FFCC00 solid;*/
+  /*background: #e0e0e0;*/
+  left: 5;
+  top: 0;
+  width: 175;
+  /*padding: 5;*/
+  line-height: 1.3em;
+
+}
+
 #wrapper {
+	/*border: thin #FFCC00 solid;*/
+	/*width: 400px;*/
+	margin-right: 0;
+	margin-left: 180;
 /*
-	border: thin #FFCC00 solid;
+	left: 190;
+	right: 10;
 */
-	/*width: 800px;*/
-	margin-right: 10;
-	margin-left: 190;
 	font-family: "Apple Gothic", "Segoe UI Semibold", Helvetica, sans-serif;
-	/*
-color: black;
-	background-color: blue;
-*/
+}
+
+#middle {
+	/*border: thin #FFCC00 solid;*/
+	top: 0;
+	margin-left: 180;
+	margin-right:305;
+}
+
+#staging {
+	position: fixed;
+	/*border: thin #FFCC00 solid;*/
+	top: 0;
+	right: 5;
+	width: 300px;
 }
 
 .intro {
@@ -114,17 +153,16 @@ img {
 }
 
 
-#menu {
-  position: fixed;
-/*  border: 3px double #FFCC00;*/
-  /*background: #e0e0e0;*/
-  left: 5;
-  top: 0;
-  width: 175;
-  padding: 5;
-  font-family: "Apple Gothic", "Segoe UI Semibold", Helvetica, sans-serif;
-  line-height: 1.3em;
-
+label, input, select, textarea {
+	width: 100%
 }
+
+
+table.blank {
+	border-style: none;
+	text-align: right;
+	padding: 5px;
+}
+
 
 
