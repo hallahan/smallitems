@@ -1,9 +1,7 @@
 <?php
-//$all_clients = get_all_clients_list();
-//$all_items = get_all_items_list();
-//$all_clients_count = count( $all_clients );
-//$all_items_count = count( %all_items );
-
+$clients = get_all_clients_list();
+$items = get_all_items_list();
+$formatstr = '<option value="%d" >%s</option>';
 ?>
 
 <div id="middle">
@@ -17,7 +15,7 @@
 					<td width="300">
 						<input type="text" name="searchclient" />
 					</td>
-					<td width="90">
+					<td width="95">
 						<input type="button" value="Search"/>
 					</td>
 				</tr>
@@ -26,25 +24,15 @@
 						<select name="clients" size="10" >
 		
 <?php
-//for( $i=0; $i<$all_clients_count; $i++ )
-//{
-//	echo '<option value="' . all_clients[$i]['client_id'] . '">' . all_clients[$i]['client_name'] . '</option>';
-//}
+foreach( $clients as $c )
+{
+	printf( $formatstr, $c['client_id'], $c['client_name'] );
+}
 ?>
 
-							<option value="emo" selected>Emo</option>
-							<option value="metal/rock" >Metal/Rock sdfg sdfg dsfg sdfg sdfgsfd</option>
-							<option value="hiphop" >Hip Hop</option>
-							<option value="ska" >Ska</option>
-							<option value="jazz" >Jazz</option>
-							<option value="country" >Country</option>
-							<option value="classical" >Classical</option>
-							<option value="alternative" >Alternative</option>
-							<option value="oldies" >Oldies</option>
-							<option value="techno" >Techno</option>
 						</select>
 					</td>
-					<td width="90">
+					<td width="95">
 						<input type="button" value="Add New Client" />
 					</td>
 				</tr>
@@ -52,7 +40,7 @@
 			<br/>
 			<table class="silent" align="right" >
 				<tr>
-					<td width="90">
+					<td width="95">
 						<input type="button" value="Select"/>
 					</td>
 				</tr>
@@ -69,7 +57,7 @@
 					<td width="300">
 						<input type="text" name="searchclient" />
 					</td>
-					<td width="90">
+					<td width="95">
 						<input type="button" value="Search"/>
 					</td>
 				</tr>
@@ -88,7 +76,7 @@
 							<option value="techno" >Techno</option>
 						</select>
 					</td>
-					<td width="90">
+					<td width="95">
 						<input type="button" value="Add New Item" />
 					</td>
 				</tr>
@@ -96,10 +84,10 @@
 			<br/>
 			<table class="silent" align="right" >
 				<tr>
-					<td width="90">
+					<td width="95">
 						<input type="button" value="Clear"/>
 					</td>
-					<td width="90">
+					<td width="95">
 						<input type="button" value="Add"/>
 					</td>
 				</tr>
@@ -166,10 +154,10 @@
 			
 			<table class="silent" align="right" >
 				<tr>
-					<td width="90">
+					<td width="95">
 						<input type="button" value="Clear"/>
 					</td>
-					<td width="90">
+					<td width="95">
 						<input type="button" value="Add"/>
 					</td>
 				</tr>

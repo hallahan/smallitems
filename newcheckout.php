@@ -1,4 +1,4 @@
-<?php //include 'newcheckout_cont.php'; ?>
+<?php include 'newcheckout_cont.php'; ?>
 
 <html>
 <head>
