@@ -13,10 +13,16 @@ include("menu.php");
 
 <?php
 
+$esc_first_name =mysql_real_escape_string( $_POST[first_name] );
+$esc_last_name = mysql_real_escape_string( $_POST[last_name] );
+$esc_psu_id = mysql_real_escape_string( $_POST[psu_id] );
+$esc_phone = mysql_real_escape_string( $_POST[phone] );
+$esc_email = mysql_real_escape_string( $_POST[email] );
+$esc_notes = mysql_real_escape_string( $_POST[notes] );
 
 $sql= "INSERT INTO client (first_name, last_name, psu_id, phone, email, notes)
-        VALUES ('$_POST[first_name]','$_POST[last_name]','$_POST[psu_id]',
-                '$_POST[phone]','$_POST[email]','$_POST[notes]')";
+        VALUES ('$esc_first_name','$esc_last_name','$esc_psu_id',
+                '$esc_phone','$esc_email','$esc_notes')";
 
 if ( mysql_query($sql,$con) )
 {
@@ -31,12 +37,12 @@ else
 
 
 
-echo $_POST[first_name] . " ";
-echo $_POST[last_name] . '<br />';
-echo $_POST[psu_id] . '<br />';
-echo $_POST[phone] . '<br />';
-echo $_POST[email] . '<br />';
-echo $_POST[notes] . '<br />';
+echo 'First Name: ' . $_POST[first_name] . "<br />";
+echo 'Last Name : ' . $_POST[last_name] . '<br />';
+echo 'PSU ID    : ' . $_POST[psu_id] . '<br />';
+echo 'Phone     : ' . $_POST[phone] . '<br />';
+echo 'Email     : ' . $_POST[email] . '<br />';
+echo 'Notes     : ' . $_POST[notes] . '<br />';
 ?>
 
 </div>

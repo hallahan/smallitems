@@ -5,9 +5,6 @@
 
 <link href="style.css" rel="stylesheet" type="text/css" />
 
-<script src="./datepicker/datepicker.js"></script>
-<link href="./datepicker/datepicker.css" rel="stylesheet" type="text/css" />
-
 <style type="text/css"></style>
 <title>Small Items Checkout</title>
 </head>

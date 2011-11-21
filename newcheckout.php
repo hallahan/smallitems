@@ -1,3 +1,5 @@
+<?php //include 'newcheckout_cont.php'; ?>
+
 <html>
 <head>
 <meta content="en-us" http-equiv="Content-Language" />

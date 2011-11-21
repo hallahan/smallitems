@@ -1,3 +1,11 @@
+<?php
+//$all_clients = get_all_clients_list();
+//$all_items = get_all_items_list();
+//$all_clients_count = count( $all_clients );
+//$all_items_count = count( %all_items );
+
+?>
+
 <div id="middle">
 	<!-- <h1>New Checkout</h1> -->
 	<form action = "newcheckout_db.php" method = "post">
@@ -9,13 +17,21 @@
 					<td width="300">
 						<input type="text" name="searchclient" />
 					</td>
-					<td width="80">
+					<td width="90">
 						<input type="button" value="Search"/>
 					</td>
 				</tr>
 				<tr>
 					<td width="300">
-						<select multiple name="music" size="10" >
+						<select name="clients" size="10" >
+		
+<?php
+//for( $i=0; $i<$all_clients_count; $i++ )
+//{
+//	echo '<option value="' . all_clients[$i]['client_id'] . '">' . all_clients[$i]['client_name'] . '</option>';
+//}
+?>
+
 							<option value="emo" selected>Emo</option>
 							<option value="metal/rock" >Metal/Rock sdfg sdfg dsfg sdfg sdfgsfd</option>
 							<option value="hiphop" >Hip Hop</option>
@@ -28,14 +44,15 @@
 							<option value="techno" >Techno</option>
 						</select>
 					</td>
-					<td width="80">
+					<td width="90">
 						<input type="button" value="Add New Client" />
 					</td>
 				</tr>
 			</table>
-			<table class="silent align="right" >
+			<br/>
+			<table class="silent" align="right" >
 				<tr>
-					<td width="80">
+					<td width="90">
 						<input type="button" value="Select"/>
 					</td>
 				</tr>
@@ -52,7 +69,7 @@
 					<td width="300">
 						<input type="text" name="searchclient" />
 					</td>
-					<td width="80">
+					<td width="90">
 						<input type="button" value="Search"/>
 					</td>
 				</tr>
@@ -71,21 +88,22 @@
 							<option value="techno" >Techno</option>
 						</select>
 					</td>
-					<td width="80">
+					<td width="90">
 						<input type="button" value="Add New Item" />
 					</td>
 				</tr>
 			</table>
-			<table class="silent align="right" >
+			<br/>
+			<table class="silent" align="right" >
 				<tr>
-					<td width="80">
+					<td width="90">
 						<input type="button" value="Clear"/>
 					</td>
-					<td width="80">
+					<td width="90">
 						<input type="button" value="Add"/>
 					</td>
 				</tr>
-		 </table>
+			</table>
 			
 		</fieldset>
 		
@@ -106,6 +124,7 @@
 						/
 						<input type="text" class="w4em" id="coyr" name="coyr" value="" maxlength="4" placeholder="YYYY" />
 					</td>
+					
 				</tr>
 				<tr>
 					<td width="115">
@@ -143,18 +162,18 @@
 			</table>
 			
 			<label for="comments">Comments:</label>
-			<textarea rows="4" cols="55" placeholder:"Details Regarding Checkout"></textarea>
+			<textarea rows="4" cols="45" placeholder:"Details Regarding Checkout"></textarea>
 			
 			<table class="silent" align="right" >
 				<tr>
-					<td width="80">
+					<td width="90">
 						<input type="button" value="Clear"/>
 					</td>
-					<td width="80">
+					<td width="90">
 						<input type="button" value="Add"/>
 					</td>
 				</tr>
-		 </table>
+			</table>
 	 </fieldset>
 	 
 	 
