@@ -12,7 +12,7 @@ $ir = mysql_query( "SELECT * FROM item ORDER BY name, type;" );
 ?>
 
 <script type="text/javascript">
-function searchClient() {
+function searchClient( search_str ) {
 	
 	var xmlhttp;
 	if (window.XMLHttpRequest)
@@ -28,15 +28,16 @@ function searchClient() {
 	{
 	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
 	  {
+	  	// document.getElementById("clientsearch_txt").
 	    document.getElementById("staging_client").innerHTML=xmlhttp.responseText;
 	  }
 	}
-	xmlhttp.open("GET","ajaxtest.txt",true);
+	xmlhttp.open("GET","ajaxtest.php?test="+search_str,true);
 	xmlhttp.send();
 	
 }
-
 </script>
+
 <div id="middle">
 	<!-- <h1>New Checkout</h1> -->
 	<form action = "newcheckout_db.php" method = "post">
@@ -47,24 +48,21 @@ function searchClient() {
 			<table class="silent">
 				<tr>
 					<td width="300">
-					<input type="text" name="searchclient" />
+					<input type="text" id="clientsearch_txt" name="searchclient" />
 					</td>
 					<td width="95">
-					<input id = "clientserach" type="button" value="Search"/>
+					<input id = "clientsearch_btn" type="button" value="Search" onclick="searchClient()" />
 					</td>
 				</tr>
 				<tr>
 					<td width="300">
-					<select name="clients" size="10" >
-					
+					<select id="clientsearch_sel" name="clients" size="10" 
 						<?php
 							while( $row = mysql_fetch_array($cr) ) {
 								$full_name = $row['first_name'] . ' ' . $row['last_name'];
 								printf( $formatstr, $row['client_id'], $full_name );
 							}
 						?>
-						
-
 					</select></td>
 					<td width="95">
 					<input type="button" value="Add New Client" />
@@ -95,7 +93,7 @@ function searchClient() {
 				</tr>
 				<tr>
 					<td width="300">
-					<select multiple name="items" size="10" >
+					<select id="itemsearch_sel" multiple name="items" size="10" >
 						<?php
 							while( $row = mysql_fetch_array($ir) ) {
 								$item_name = $row['name'];
