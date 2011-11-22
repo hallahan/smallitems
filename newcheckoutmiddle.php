@@ -2,10 +2,15 @@
 $clients = get_all_clients_list();
 $items = get_all_items_list();
 $formatstr = '<option value="%d" >%s</option>';
+
+$clients_query = get_all_clients_query();
+$items_query = get_all_items_query();
+
 ?>
 
 <div id="middle">
 	<!-- <h1>New Checkout</h1> -->
+	
 	<form action = "newcheckout_db.php" method = "post">
 		<fieldset>
 			<legend>Client</legend>
@@ -23,10 +28,19 @@ $formatstr = '<option value="%d" >%s</option>';
 					<td width="300">
 						<select name="clients" size="10" >
 		
+<!-- 
 <?php
 foreach( $clients as $c )
 {
 	printf( $formatstr, $c['client_id'], $c['client_name'] );
+}
+?>
+ -->
+
+<?php
+while ( $client_row = mysql_fetch_array( $clients_query ) ) {
+ 	$full_name = $row['first_name'] . ' ' . $row['last_name'];
+ 	printf( $formatstr, $row['client_id'], 'what' );
 }
 ?>
 						</select>

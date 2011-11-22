@@ -20,6 +20,12 @@ include 'dbsetup.php';
  	}
  	return $clients;
  }
+ 
+function get_all_clients_query() {
+	$clients_query = "SELECT * FROM client ORDER BY last_name, first_name;";
+ 	$clients_res = mysql_query( $clients_query );
+ 	return $clients_res;
+}
 
 function get_all_items_list( )
 {
@@ -41,6 +47,14 @@ function get_all_items_list( )
  	}
  	return $items;
  }
+ 
+function get_all_items_query() {
+	$query = "SELECT * FROM item ORDER BY name, type;";
+ 	$res = mysql_query( $query );
+ 	return $res;
+}
+ 
+ 
 //TODO not finished
 // function search_clients_list( $search_string )
 // {
