@@ -4,6 +4,7 @@ $isel_str=$_GET["itemsearch_sel"];
 
 $sel_formatstr = '<option value="%d" >%s</option>';
 
+
 $con = mysql_connect("db.cecs.pdx.edu","hallahan","sempervirens");
 if (!$con){die('could not connect to db: ' . mysql_error() );}
 
@@ -23,7 +24,7 @@ if ( $csel_str ) {
 	
 	while( $row = mysql_fetch_array($client_res) ) {
 		$full_name = $row['first_name'] . ' ' . $row['last_name'];
-		printf( $formatstr, $row['client_id'], $full_name );
+		printf( $sel_formatstr, $row['client_id'], $full_name );
 	}
 	
 } else if ( $isel_str ) {

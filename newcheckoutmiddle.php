@@ -12,8 +12,9 @@ $ir = mysql_query( "SELECT * FROM item ORDER BY name, type;" );
 ?>
 
 <script type="text/javascript">
-function searchClient( search_str ) {
-	
+function searchClient(  ) {
+	var searchStr = document.getElementById("clientsearch_txt").value;
+	// var searchStr = "test";
 	var xmlhttp;
 	if (window.XMLHttpRequest)
 	{// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -28,11 +29,10 @@ function searchClient( search_str ) {
 	{
 	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
 	  {
-	  	// document.getElementById("clientsearch_txt").
-	    document.getElementById("staging_client").innerHTML=xmlhttp.responseText;
+	    document.getElementById("clientsearch_sel").innerHTML=xmlhttp.responseText;
 	  }
 	}
-	xmlhttp.open("GET","ajaxtest.php?test="+search_str,true);
+	xmlhttp.open("GET","search.php?clientsearch_sel="+searchStr,true);
 	xmlhttp.send();
 	
 }
