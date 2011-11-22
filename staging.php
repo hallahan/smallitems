@@ -3,10 +3,12 @@
 		<legend>Staging</legend>
 		
 		<h2>Client:</h2>
-		Sally Jacobson<br/>
-		945-344-2533<br/>
-		(503) 222-1423<br/>
-		jacobs@pdx.edu
+			<div id="staging_client">
+			Sally Jacobson<br/>
+			945-344-2533<br/>
+			(503) 222-1423<br/>
+			jacobs@pdx.edu
+			</div>
 		
 		<p class="small">
 			There are notes regarding Sally Jacobson. Sally Jacobson does not truely exist.

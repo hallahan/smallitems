@@ -1,17 +1,8 @@
 <?php
-// $clients = get_all_clients_list();
-// $items = get_all_items_list();
 $formatstr = '<option value="%d" >%s</option>';
-// 
-// $clients_query = get_all_clients_query();
-// $items_query = get_all_items_query();
-
 
 $con = mysql_connect("db.cecs.pdx.edu","hallahan","sempervirens");
-if (!$con)
-{
-  die('could not connect to db: ' . mysql_error() );
-}
+if (!$con){die('could not connect to db: ' . mysql_error() );}
 
 mysql_select_db("hallahan",$con);
 
@@ -20,6 +11,32 @@ $ir = mysql_query( "SELECT * FROM item ORDER BY name, type;" );
 
 ?>
 
+<script type="text/javascript">
+function searchClient() {
+	
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	
+	xmlhttp.onreadystatechange=function()
+	{
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	  {
+	    document.getElementById("staging_client").innerHTML=xmlhttp.responseText;
+	  }
+	}
+	xmlhttp.open("GET","ajaxtest.txt",true);
+	xmlhttp.send();
+	
+}
+
+</script>
 <div id="middle">
 	<!-- <h1>New Checkout</h1> -->
 	<form action = "newcheckout_db.php" method = "post">
@@ -33,7 +50,7 @@ $ir = mysql_query( "SELECT * FROM item ORDER BY name, type;" );
 					<input type="text" name="searchclient" />
 					</td>
 					<td width="95">
-					<input type="button" value="Search"/>
+					<input id = "clientserach" type="button" value="Search"/>
 					</td>
 				</tr>
 				<tr>
@@ -47,6 +64,7 @@ $ir = mysql_query( "SELECT * FROM item ORDER BY name, type;" );
 							}
 						?>
 						
+
 					</select></td>
 					<td width="95">
 					<input type="button" value="Add New Client" />
@@ -167,6 +185,8 @@ $ir = mysql_query( "SELECT * FROM item ORDER BY name, type;" );
 		&nbsp;
 	</p>
 </div>
+
+
 <script>
 	datePickerController.createDatePicker({
 		// Associate the three text inputs to their date parts
