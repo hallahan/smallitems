@@ -62,6 +62,29 @@ function searchItem(  ) {
 	
 }
 
+function selectClient(  ) {
+	var id = document.getElementById("clientsearch_sel").value;
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	
+	xmlhttp.onreadystatechange=function()
+	{
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	  {
+	    document.getElementById("staging_client").innerHTML=xmlhttp.responseText;
+	  }
+	}
+	xmlhttp.open("GET","staging/client.php?id="+id,true);
+	xmlhttp.send();
+	
+}
 
 </script>
 
@@ -74,18 +97,18 @@ function searchItem(  ) {
 			</legend>
 			<table class="silent">
 				<tr>
-					<form name="clientsearch_frm" onSubmit="searchClient()" >
+					<!-- <form name="clientsearch_frm" onSubmit="searchClient()"> -->
 						<td width="300">
-						<input type="text" id="clientsearch_txt" name="search"  />
+						<input type="text" id="clientsearch_txt" name="search" onkeyup="searchClient()" />
 						</td>
 						<td width="95">
-						<input id = "clientsearch_btn" type="submit" value="Search" />
+						<input id = "clientsearch_btn" type="button" value="Search" onclick="searchClient()" />
 						</td>
-					</form>
+					<!-- </form> -->
 				</tr>
 				<tr>
 					<td width="300">
-					<select id="clientsearch_sel" name="clients" size="10" 
+					<select id="clientsearch_sel" name="clients" size="10" >
 						<?php
 							while( $row = mysql_fetch_array($cr) ) {
 								$full_name = $row['first_name'] . ' ' . $row['last_name'];
@@ -102,7 +125,7 @@ function searchItem(  ) {
 			<table class="silent" align="right" >
 				<tr>
 					<td width="95">
-					<input type="button" value="Select"/>
+					<input type="button" value="Select" onclick="selectClient()" />
 					</td>
 				</tr>
 			</table>
@@ -114,7 +137,7 @@ function searchItem(  ) {
 			<table class="silent">
 				<tr>
 					<td width="300">
-					<input id="itemsearch_txt" type="text" name="searchclient" />
+					<input id="itemsearch_txt" type="text" name="searchclient" onkeyup="searchItem()"/>
 					</td>
 					<td width="95">
 					<input id="itemsearch_btn" type="button" value="Search" onclick="searchItem()" />
