@@ -22,7 +22,7 @@ a:hover {
 }
 
 a:active {
-    text-decoration: none
+    text-decoration: none;
 		border-bottom: 1px dotted #ccc;
    
 }
@@ -96,16 +96,16 @@ h3 {
 	background: red;
 	width: 100%;
 	top: 0;
-	bottom: 60;
+	bottom: 60px;
 }
 
 #menu {
   position: fixed;
   /*border: thin #FFCC00 solid;*/
   /*background: #e0e0e0;*/
-  left: 5;
-  top: 8;
-  width: 175;
+  left: 5px;
+  top: 8px;
+  width: 175px;
   /*padding: 5;*/
   line-height: 1.3em;
 
@@ -115,7 +115,7 @@ h3 {
 	/*border: thin #FFCC00 solid;*/
 	/*width: 400px;*/
 	margin-right: 0;
-	margin-left: 180;
+	margin-left: 180px;
 /*
 	left: 190;
 	right: 10;
@@ -126,22 +126,34 @@ h3 {
 #middle {
 	/*border: thin #FFCC00 solid;*/
 	top: 0;
-	margin-left: 180;
+	margin-left: 180px;
 	/*margin-right:305;*/
-	width: 460;
+	width: 460px;
 }
 
 #staging {
 	position: fixed;
 	/*border: thin #FFCC00 solid;*/
-	top: 8;
+	top: 8px;
 /*
 	right: 5;
 	width: 300px;
 */
 	
-	left: 655;
-	width:300;
+	left: 655px;
+	width:300px;
+}
+
+#console {
+	border: thin #FFCC00 solid;
+	position: fixed;
+	top:0px;
+	right:0px;
+	bottom:768px;
+	width:350px;
+	overflow: auto;
+	opacity:0.7;
+	background-color: #800000;
 }
 
 .intro {
