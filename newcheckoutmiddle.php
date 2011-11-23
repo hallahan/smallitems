@@ -61,23 +61,27 @@ function searchItem(  ) {
 	xmlhttp.send();
 	
 }
+
+
 </script>
 
 <div id="middle">
 	<!-- <h1>New Checkout</h1> -->
-	<form action = "newcheckout_db.php" method = "post">
+<!-- 	<form action = "newcheckout_db.php" method = "post"> -->
 		<fieldset>
 			<legend>
 				Client
 			</legend>
 			<table class="silent">
 				<tr>
-					<td width="300">
-					<input type="text" id="clientsearch_txt" name="searchclient" />
-					</td>
-					<td width="95">
-					<input id = "clientsearch_btn" type="button" value="Search" onclick="searchClient()" />
-					</td>
+					<form name="clientsearch_frm" onSubmit="searchClient()" >
+						<td width="300">
+						<input type="text" id="clientsearch_txt" name="search"  />
+						</td>
+						<td width="95">
+						<input id = "clientsearch_btn" type="submit" value="Search" />
+						</td>
+					</form>
 				</tr>
 				<tr>
 					<td width="300">
@@ -203,7 +207,7 @@ function searchItem(  ) {
 				</tr>
 			</table>
 		</fieldset>
-	</form>
+<!-- 	</form> -->
 	<p>
 		&nbsp;
 	</p>
