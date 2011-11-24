@@ -1,3 +1,3 @@
 <?php
-insert "history.php";
+include "history.php";
 ?>

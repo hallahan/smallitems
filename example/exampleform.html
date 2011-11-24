@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Example Form</title>
+  <style type="text/css">
+    label, input, select, textarea {
+        display: block;
+        width: 200px;
+        float: left;
+        margin-bottom: 1em;
+    }
+
+    select {
+        width: 205px;
+    }
+
+    label {
+        text-align: right;
+        width: 100px;
+        padding-right: 2em;
+    }
+
+    .clear {
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <form action="#">
+    <fieldset>
+      <legend>User Profile</legend>
+      <label for="fname">First Name</label>
+      <input id="fname" name="fname" type="text" />
+      <br class="clear" />
+
+      <label for="lname">Last Name</label>
+      <input id="lname" name="lname" type="text" />
+      <br class="clear" />
+
+      <label for="fav_lang">Favorite Language</label>
+      <select id="fav_lang" name="fav_lang">
+        <option value="c#">C#</option>
+        <option value="java">Java</option>
+        <option value="ruby">Ruby</option>
+        <option value="python">Python</option>
+        <option value="perl">Perl</option>
+      </select>
+      <br class="clear" />
+
+      <label for="bio">Biography</label>
+      <textarea id="bio" name="bio" cols="14" rows="4"></textarea>
+      <br class="clear" />
+    </fieldset>
+  </form>
+</body>
+</html>
