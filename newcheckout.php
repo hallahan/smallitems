@@ -20,6 +20,7 @@
 	include 'menu.php'; 
 	include 'newcheckoutmiddle.php';
 	include 'staging.php';
+	// include 'test/console.php';
 ?>
 
 </body>
