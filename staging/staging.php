@@ -13,7 +13,7 @@
 			<div id="staging_item">
 			</div>
 
-		<div id="checkout">
+		<div id="staging_checkout">
 			<h2>Checkout Date/Time:</h2>	
 			<h2>Return Date/Time:</h2>			
 			<h2>Notes:</h2>

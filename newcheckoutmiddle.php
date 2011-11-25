@@ -87,10 +87,57 @@ function selectClient(  ) {
 	
 }
 
-// var items = new Array();
+
+function selectCheckout() {
+	checkoutDate_mm = 	document.getElementById("comm").value;
+	checkoutDate_dd = 	document.getElementById("codd").value;
+	checkoutDate_yr = 	document.getElementById("coyr").value;
+	checkoutTime_h = 		document.getElementById("cohh").value;
+	checkoutTime_m = 		document.getElementById("com").value;
+	returnDate_mm = 		document.getElementById("rtmm").value;
+	returnDate_dd = 		document.getElementById("rtdd").value;
+	returnDate_yr = 		document.getElementById("rtyr").value;
+	returnTime_h = 			document.getElementById("rthh").value;
+	returnTime_m = 			document.getElementById("rtm").value;
+	notes = 						document.getElementById("notes").value;
+	
+	checkoutDate = checkoutDate_yr + '-' + checkoutDate_mm + '-' + checkoutDate_dd;
+	returnDate   = returnDate_yr + '-' + returnDate_mm + '-' + returnDate_dd;
+	checkoutTime = checkoutTime_h + ':' + checkoutTime_m;
+	returnTime = returnTime_h + ':' + returnTime_m;
+	
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	
+	xmlhttp.onreadystatechange=function()
+	{
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	  {
+	    document.getElementById("staging_checkout").innerHTML=xmlhttp.responseText;
+	  }
+	}
+	
+	xmlhttp.open("GET","staging/checkout.php?checkout_date=" + checkoutDate +
+								"&checkout_time=" + checkoutTime +
+								"&return_date="+ returnDate+
+								"&return_time=" + returnTime + 
+								"&notes=" + notes, true);
+								
+	xmlhttp.send();
+	
+}
+
+var items = new Array();
 
 function selectItem() {
-	var id = document.getElementById("itemsearch_sel").value;
+	id = document.getElementById("itemsearch_sel").value;
 	var xmlhttp;
 	if (window.XMLHttpRequest)
 	{// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -108,8 +155,9 @@ function selectItem() {
 	    document.getElementById("staging_item").innerHTML=xmlhttp.responseText;
 	  }
 	}
-	// items.push(id);
-	xmlhttp.open("GET","staging/item.php?id=10_11_12",true);
+	items.push(id);
+	items_str = items.join("_");
+	xmlhttp.open("GET","staging/item.php?id="+items_str,true);
 	xmlhttp.send();
 	
 }
@@ -182,7 +230,7 @@ function selectItem() {
 								if ( $item_type ) {
 									$item_name = $item_name . '(' . $item_type . ')';
 								}
-								printf( $formatstr, $row['client_id'], $item_name );
+								printf( $formatstr, $row['item_id'], $item_name );
 							}
 						?>
 					</select></td>
@@ -224,7 +272,7 @@ function selectItem() {
 					<td width="180">
 					<input type="text" class="w2em" id="cohh" name="cohh" value="" maxlength="2" placeholder="HH" />
 					:
-					<input type="text" class="w2em" id="comm" name="comm" value="" maxlength="2" placeholder="MM" />
+					<input type="text" class="w2em" id="com" name="comm" value="" maxlength="2" placeholder="MM" />
 					</td>
 				</tr>
 				<tr>
@@ -242,19 +290,19 @@ function selectItem() {
 					<td width="180">
 					<input type="text" class="w2em" id="rthh" name="rthh" value="" maxlength="2" placeholder="HH" />
 					:
-					<input type="text" class="w2em" id="rtmm" name="rthh" value="" maxlength="2" placeholder="MM" />
+					<input type="text" class="w2em" id="rtm" name="rthh" value="" maxlength="2" placeholder="MM" />
 					</td>
 				</tr>
 			</table>
-			<label for="comments">Comments:</label>
-			<textarea rows="4" cols="45" placeholder:"Details Regarding Checkout"></textarea>
+			<label for="notes">Notes:</label>
+			<textarea id="notes" rows="4" cols="45" placeholder:"Details Regarding Checkout"></textarea>
 			<table class="silent" align="right" >
 				<tr>
 					<td width="95">
 					<input type="button" value="Clear"/>
 					</td>
 					<td width="95">
-					<input type="button" value="Add"/>
+					<input type="button" onclick="selectCheckout()" value="Add"/>
 					</td>
 				</tr>
 			</table>
