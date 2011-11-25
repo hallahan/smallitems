@@ -25,13 +25,13 @@ $esc_rtd = mysql_real_escape_string( $return_date );
 $esc_rtt = mysql_real_escape_string( $return_time );
 $esc_not = mysql_real_escape_string( $notes );
 
-echo "TEST<br/>";
-echo $esc_cod . "<br/>";
-echo $esc_cot . "<br/>";
-// echo $return_date . "<br/>";
-// echo $return_time . "<br/>";
-// echo $notes . "<br/>";
-echo "ENDTEST";
+// echo "TEST<br/>";
+// echo $esc_cod . "<br/>";
+// echo $esc_cot . "<br/>";
+// // echo $return_date . "<br/>";
+// // echo $return_time . "<br/>";
+// // echo $notes . "<br/>";
+// echo "ENDTEST";
 
 printf($formatstr, 
 				$esc_cod,
