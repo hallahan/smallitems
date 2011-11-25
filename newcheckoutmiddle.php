@@ -87,6 +87,33 @@ function selectClient(  ) {
 	
 }
 
+// var items = new Array();
+
+function selectItem() {
+	var id = document.getElementById("itemsearch_sel").value;
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	
+	xmlhttp.onreadystatechange=function()
+	{
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	  {
+	    document.getElementById("staging_item").innerHTML=xmlhttp.responseText;
+	  }
+	}
+	// items.push(id);
+	xmlhttp.open("GET","staging/item.php?id=" + id ,true);
+	xmlhttp.send();
+	
+}
+
 </script>
 
 <div id="middle">
@@ -171,7 +198,7 @@ function selectClient(  ) {
 					<input type="button" value="Clear"/>
 					</td>
 					<td width="95">
-					<input type="button" value="Add"/>
+					<input type="button" value="Add" onclick="selectItem()" />
 					</td>
 				</tr>
 			</table>

@@ -4,7 +4,10 @@ $formatstr =
 '%s<br/>
 %s<br/>
 %s<br/>
-%s';
+%s
+<p class="small">
+	%s
+</p>';
 
 $con = mysql_connect("db.cecs.pdx.edu","hallahan","sempervirens");
 if (!$con){die('could not connect to db: ' . mysql_error() );}
@@ -20,7 +23,8 @@ $res = mysql_query( $q );
 
 while( $row = mysql_fetch_array($res) ) {
 	$full_name = $row['first_name'] . ' ' . $row['last_name'];
-	printf( $formatstr, $full_name, $row['psu_id'], $row['phone'], $row['email'] );
+	printf( $formatstr, $full_name, $row['psu_id'], 
+					$row['phone'], $row['email'], $row['notes'] );
 }
 
 ?>
