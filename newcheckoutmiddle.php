@@ -109,7 +109,7 @@ function selectItem() {
 	  }
 	}
 	// items.push(id);
-	xmlhttp.open("GET","staging/item.php?id=" + 5 ,true);
+	xmlhttp.open("GET","staging/item.php?id=10_11_12",true);
 	xmlhttp.send();
 	
 }
