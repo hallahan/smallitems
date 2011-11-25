@@ -2,9 +2,9 @@
 $id=$_GET["id"];
 
 
-echo "TEST<br/>";
-print_r($id);
-echo "END_TEST<br/>";
+// echo "TEST<br/>";
+// print_r($id);
+// echo "END_TEST<br/>";
 
 $formatstr = 
 '%s (%s)<br/>';
@@ -25,29 +25,33 @@ foreach( $ids as $i ){
 	array_push( $escs, $esc );
 }
 
-$q=
-"SELECT * FROM item 
-WHERE item_id=" . array_shift( $escs );
-
-foreach ($escs as $e ) {
-	$q = $q . " OR item_id=" . $e;	
-}
-
-$q = $q . " ORDER BY name, type;";
-
-// $esc = mysql_real_escape_string( $id );
 // $q=
 // "SELECT * FROM item 
-// WHERE item_id=" . $esc . ";";
+// WHERE item_id=" . array_shift( $escs );
+// 
+// foreach ($escs as $e ) {
+	// $q = $q . " OR item_id=" . $e;	
+// }
+// 
+// $q = $q . " ORDER BY name, type;";
 
-$res = mysql_query( $q );
+// $esc = mysql_real_escape_string( $id );
 
-while( $row = mysql_fetch_array($res) ) {
-	if ( $row['type']) {
-		printf($formatstr, $row['name'], $row['type']);
-	} else {
-		echo $row['name'] . '<br/>';
+foreach($escs as $e) {
+	$q=
+	"SELECT * FROM item 
+	WHERE item_id=" . $e . ";";
+	
+	$res = mysql_query( $q );
+	
+	while( $row = mysql_fetch_array($res) ) {
+		if ( $row['type']) {
+			printf($formatstr, $row['name'], $row['type']);
+		} else {
+			echo $row['name'] . '<br/>';
+		}
 	}
 }
+
 
 ?>
