@@ -1,9 +1,9 @@
 <?php
 $id=$_GET["id"];
 
-// echo "TEST<br/>";
-// echo $id . "<br/>";
-// echo "END_TEST<br/>";
+echo "TEST<br/>";
+echo $id;
+echo "END_TEST<br/>";
 
 $formatstr = 
 '%s (%s)<br/>';
