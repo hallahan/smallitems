@@ -2,9 +2,9 @@
 $id=$_GET["id"];
 
 
-// echo "TEST<br/>";
-// print_r($id);
-// echo "END_TEST<br/>";
+echo "TEST<br/>";
+print_r($id);
+echo "END_TEST<br/>";
 
 $formatstr = 
 '%s (%s)<br/>';
@@ -33,7 +33,7 @@ foreach ($escs as $e ) {
 	$q = $q . " OR item_id=" . $e;	
 }
 
-$q = $q . ";";
+$q = $q . " ORDER BY name, type;";
 
 // $esc = mysql_real_escape_string( $id );
 // $q=
