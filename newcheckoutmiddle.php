@@ -176,16 +176,16 @@ function selectItem() {
 
 					<!-- <form name="clientsearch_frm" onSubmit="searchClient()"> -->
 						<td width="300">
-						<input type="text" id="clientsearch_txt" name="search" onkeyup="searchClient()" />
+						<input class="full" type="text" id="clientsearch_txt" name="search" onkeyup="searchClient()" />
 						</td>
 						<td width="95">
-						<input id = "clientsearch_btn" type="button" value="Search" onclick="searchClient()" />
+						<input class="full" id = "clientsearch_btn" type="button" value="Search" onclick="searchClient()" />
 						</td>
 					<!-- </form> -->
 				</tr>
 				<tr>
 					<td width="300">
-					<select id="clientsearch_sel" name="clients" size="10" >
+					<select class="full" id="clientsearch_sel" name="clients" size="10" >
 						<?php
 							while( $row = mysql_fetch_array($cr) ) {
 								$full_name = $row['first_name'] . ' ' . $row['last_name'];
@@ -194,7 +194,7 @@ function selectItem() {
 						?>
 					</select></td>
 					<td width="95">
-					<input type="button" value="Add New Client" />
+					<input class="full" type="button" value="Add New Client" />
 					</td>
 				</tr>
 			</table>
@@ -202,7 +202,7 @@ function selectItem() {
 			<table class="silent" align="right" >
 				<tr>
 					<td width="95">
-					<input type="button" value="Select" onclick="selectClient()" />
+					<input class="full" type="button" value="Select" onclick="selectClient()" />
 					</td>
 				</tr>
 			</table>
@@ -214,15 +214,15 @@ function selectItem() {
 			<table class="silent">
 				<tr>
 					<td width="300">
-					<input id="itemsearch_txt" type="text" name="searchclient" onkeyup="searchItem()"/>
+					<input class="full" id="itemsearch_txt" type="text" name="searchclient" onkeyup="searchItem()"/>
 					</td>
 					<td width="95">
-					<input id="itemsearch_btn" type="button" value="Search" onclick="searchItem()" />
+					<input class="full" id="itemsearch_btn" type="button" value="Search" onclick="searchItem()" />
 					</td>
 				</tr>
 				<tr>
 					<td width="300">
-					<select id="itemsearch_sel" multiple name="items" size="10" >
+					<select class="full" id="itemsearch_sel" multiple name="items" size="10" >
 						<?php
 							while( $row = mysql_fetch_array($ir) ) {
 								$item_name = $row['name'];
@@ -235,7 +235,7 @@ function selectItem() {
 						?>
 					</select></td>
 					<td width="95">
-					<input type="button" value="Add New Item" />
+					<input class="full" type="button" value="Add New Item" />
 					</td>
 				</tr>
 			</table>
@@ -243,10 +243,10 @@ function selectItem() {
 			<table class="silent" align="right" >
 				<tr>
 					<td width="95">
-					<input type="button" value="Clear"/>
+					<input class="full" type="button" value="Clear"/>
 					</td>
 					<td width="95">
-					<input type="button" value="Add" onclick="selectItem()" />
+					<input class="full" type="button" value="Add" onclick="selectItem()" />
 					</td>
 				</tr>
 			</table>
@@ -299,10 +299,10 @@ function selectItem() {
 			<table class="silent" align="right" >
 				<tr>
 					<td width="95">
-					<input type="button" value="Clear"/>
+					<input class="full" type="button" value="Clear"/>
 					</td>
 					<td width="95">
-					<input type="button" onclick="selectCheckout()" value="Add"/>
+					<input class="full" type="button" onclick="selectCheckout()" value="Add"/>
 					</td>
 				</tr>
 			</table>

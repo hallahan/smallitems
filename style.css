@@ -177,9 +177,11 @@ img {
 	float: right
 }
 
-input, select {
+input.full,
+select.full {
 	width: 100%;
 }
+
 
 table.silent {
 	border-style: none;
@@ -194,6 +196,7 @@ table.silent td {
 
 label {
 	text-align: right;
+	vertical-align:top;
 }
 
 .w2em

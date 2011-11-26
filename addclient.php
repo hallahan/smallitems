@@ -23,7 +23,7 @@
 						<label for="first_name">First Name:</label> 
 					</td>
 					<td width="180">
-						<input type="text" name="first_name" />
+						<input class="full" type="text" name="first_name" />
 					</td>
 				</tr>
 				<tr>
@@ -31,7 +31,7 @@
 						<label for="last_name">Last Name:</label>
 					</td>
 					<td width="180">
-						<input type="text" name="last_name" />
+						<input class="full" type="text" name="last_name" />
 					</td>
 				</tr>
 				<tr>	
@@ -39,7 +39,7 @@
 						<label for="psu_id">PSU ID:</label>
 					</td>
 					<td width="180">	
-						<input type="text" name="psu_id" />
+						<input class="full" type="text" name="psu_id" />
 					</td>
 				</tr>
 				<tr>	
@@ -47,7 +47,7 @@
 						<label for="phone">Phone:</label>
 					</td>
 					<td width="180">	
-						<input type="text" name="phone" />
+						<input class="full" type="text" name="phone" />
 					</td>
 				</tr>
 				<tr>	
@@ -55,7 +55,7 @@
 						<label for="email">Email:</label>
 					</td>
 					<td width="180">	
-						<input type="text" name="email" /> 
+						<input class="full" type="text" name="email" /> 
 					</td>
 				</tr>
 			</table>
@@ -66,7 +66,7 @@
 			<table class="silent" align="right">
 				<tr>
 					<td width="80">
-						<input type="submit" value="Add" />
+						<input class="full" type="submit" value="Add" />
 					</td>
 				</tr>
 			</table>
