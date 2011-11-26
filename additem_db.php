@@ -16,10 +16,10 @@ $name = mysql_real_escape_string($_POST[name]);
 $type = mysql_real_escape_string($_POST[type]);
 $descr = mysql_real_escape_string($_POST[descr]);
 
-echo "TEST<br/>";
-echo $name . "<br/>";
-echo $descr;
-echo "ENDTEST<br/>";
+// echo "TEST<br/>";
+// echo $name . "<br/>";
+// echo $descr;
+// echo "ENDTEST<br/>";
 
 $sql= "INSERT INTO item (name, type, descr)
         VALUES ('$name', '$type', '$descr' );";

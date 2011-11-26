@@ -67,7 +67,7 @@
 			</table>
 			
 			<label for="name">Description:</label> 
-			<textarea id="descr" rows="5" cols="50" ></textarea>
+			<textarea id="descr" name="descr" rows="5" cols="50" ></textarea>
 			
 			<table class="silent" align="right">
 				<tr>
