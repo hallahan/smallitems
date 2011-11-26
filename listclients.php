@@ -41,7 +41,7 @@ function searchClient( searchStr ) {
 
 <div id="wrapper">
 	<h1>Clients</h1>
-	<input type="text" name="client_search" onkeyup="searchClient(this.value)"/>
+<!-- 	<input type="text" name="client_search" onkeyup="searchClient(this.value)"/> -->
 	<table>
 		<tr>
 			<th>First Name</th>

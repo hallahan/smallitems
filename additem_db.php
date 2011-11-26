@@ -3,9 +3,7 @@ include 'dbsetup.php';
 include 'start.php';
 ?>
 
-
 <body>
-<div id="wrapper">
 
 <?php
 include("menu.php");
@@ -14,9 +12,17 @@ include("menu.php");
 <h1>Small Items Checkout</h1>
 
 <?php
+$name = mysql_real_escape_string($_POST[name]);
+$type = mysql_real_escape_string($_POST[type]);
+$descr = mysql_real_escape_string($_POST[descr]);
+
+echo "TEST<br/>";
+echo $name . "<br/>";
+echo $descr;
+echo "ENDTEST<br/>";
 
 $sql= "INSERT INTO item (name, type, descr)
-        VALUES ('$_POST[name]', '$_POST[type]', '$_POST[descr]' );";
+        VALUES ('$name', '$type', '$descr' );";
 
 if ( mysql_query($sql,$con) )
 {
