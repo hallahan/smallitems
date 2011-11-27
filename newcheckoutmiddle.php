@@ -12,7 +12,7 @@ $ir = mysql_query( "SELECT * FROM item ORDER BY name, type;" );
 ?>
 
 <script type="text/javascript">
-function searchClient(  ) {
+function searchClient() {
 	var searchStr = document.getElementById("clientsearch_txt").value;
 	// var searchStr = "test";
 	var xmlhttp;
@@ -34,7 +34,6 @@ function searchClient(  ) {
 	}
 	xmlhttp.open("GET","search/client_select.php?search="+searchStr,true);
 	xmlhttp.send();
-	
 }
 
 function searchItem(  ) {
@@ -62,9 +61,9 @@ function searchItem(  ) {
 	
 }
 
-
+var client_id = null;
 function selectClient(  ) {
-	var id = document.getElementById("clientsearch_sel").value;
+	client_id = document.getElementById("clientsearch_sel").value;
 	var xmlhttp;
 	if (window.XMLHttpRequest)
 	{// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -82,12 +81,16 @@ function selectClient(  ) {
 	    document.getElementById("staging_client").innerHTML=xmlhttp.responseText;
 	  }
 	}
-	xmlhttp.open("GET","staging/client.php?id="+id,true);
+	xmlhttp.open("GET","staging/client.php?id="+client_id,true);
 	xmlhttp.send();
 	
 }
 
-
+var notes = null;
+var checkoutDate = null;
+var returnDate = null;
+var checkoutTime = null;
+var returnTime = null;
 function selectCheckout() {
 	checkoutDate_mm = 	document.getElementById("comm").value;
 	checkoutDate_dd = 	document.getElementById("codd").value;
@@ -100,6 +103,47 @@ function selectCheckout() {
 	returnTime_h = 			document.getElementById("rthh").value;
 	returnTime_m = 			document.getElementById("rtm").value;
 	notes = 						document.getElementById("notes").value;
+	
+	if (checkoutDate_mm == "") {
+		alert("You must specify a checkout month.");
+		return;
+	}
+	if (checkoutDate_dd  == "") {
+		alert("You must specify a checkout day.");
+		return;
+	}
+	if (checkoutDate_yr  == "") {
+		alert("You must specify a checkout year.");
+		return;
+	}
+	if (checkoutTime_h  == "") {
+		alert("You must specify a checkout hour.");
+		return;
+	}
+	if (checkoutTime_m  == "") {
+		alert("You must specify a checkout minute.");
+		return;
+	}
+	if (returnDate_mm  == "") {
+		alert("You must specify a return month.");
+		return;
+	}
+	if (returnDate_dd == "") {
+		alert("You must specify a return day.");
+		return;
+	}
+	if (returnDate_yr  == "") {
+		alert("You must specify a return year.");
+		return;
+	}
+	if (returnTime_h  == "") {
+		alert("You must specify a return hour.");
+		return;
+	}
+	if (returnTime_m  == "") {
+		alert("You must specify a return minute.");
+		return;
+	}
 	
 	checkoutDate = checkoutDate_yr + '-' + checkoutDate_mm + '-' + checkoutDate_dd;
 	returnDate   = returnDate_yr + '-' + returnDate_mm + '-' + returnDate_dd;
@@ -137,7 +181,7 @@ function selectCheckout() {
 var items = new Array();
 
 function selectItem() {
-	id = document.getElementById("itemsearch_sel").value;
+	item_id = document.getElementById("itemsearch_sel").value;
 	var xmlhttp;
 	if (window.XMLHttpRequest)
 	{// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -155,14 +199,43 @@ function selectItem() {
 	    document.getElementById("staging_item").innerHTML=xmlhttp.responseText;
 	  }
 	}
-	items.push(id);
+	items.push(item_id);
 	items_str = items.join("_");
 	xmlhttp.open("GET","staging/item.php?id="+items_str,true);
 	xmlhttp.send();
 	
 }
 
+function submitCheckout() {
+	if (client_id == null) {
+		alert("You must select a client.");
+		return;
+	} 
+	if (items.length == 0) {
+		alert("You must select at least 1 item.");
+		return;
+	}
+	if (checkoutDate == null) {
+		alert("You must specify a checkout date.");
+		return;
+	}
+	if (returnDate == null) {
+		alert("You must specify a return date.");
+		return;
+	}
+	if (checkoutTime == null) {
+		alert("You must specify a checkout time.");
+		return;
+	}
+	if (returnTime == null){
+		alert("You must specify a return time.");
+		return;
+	}
+	
+}
+
 </script>
+
 
 <div id="middle">
 	<!-- <h1>New Checkout</h1> -->

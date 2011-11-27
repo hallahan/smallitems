@@ -24,7 +24,7 @@
 		<table align="right" >
 				<tr>
 					<td width="80">
-						<input type="button" value="Submit"/>
+						<input type="button" value="Submit" onclick="submitCheckout()"/>
 					</td>
 				</tr>
 		 </table>
