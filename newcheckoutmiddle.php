@@ -231,7 +231,14 @@ function submitCheckout() {
 		alert("You must specify a return time.");
 		return;
 	}
-	
+	window.location = './newcheckout_db.php?' +
+										'client_id=' + client_id +
+										'&items_str=' + items_str +
+										'&checkout_date=' + checkoutDate +
+										'&return_date=' + returnDate +
+										'&checkout_time=' + checkoutTime + 
+										'&return_time=' + returnTime +
+										'&notes=' + notes;
 }
 
 </script>
