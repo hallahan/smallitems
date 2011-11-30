@@ -75,7 +75,7 @@ $r = mysql_query( $checkout_query );
 			echo '<td class="i">' . $row['returned'] . '</td>';
 			echo '<td class="i">' . $row['checkout_time'] . '</td>';
 			echo '<td class="i">' . $row['return_time'] . '</td>';
-			echo '<td class="i">' . $row['notes'] . '</td>';
+			echo '<td class="i">' . $row[5] . '</td>';
 			echo '</tr>';
 
 			$odd++;

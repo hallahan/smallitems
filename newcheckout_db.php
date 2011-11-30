@@ -1,21 +1,11 @@
-<html>
-<head>
-<meta content="en-us" http-equiv="Content-Language" />
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-
-<link href="style.css" rel="stylesheet" type="text/css" />
-
-<style type="text/css"></style>
-<title>Small Items Checkout</title>
-</head>
-
-<body>
-
-
-
-
 <?php
+include 'head.php';
+include 'dbsetup.php';
+?>
 
+<div id="middle">
+
+<?php 
 $client_id 			= $_GET["client_id"];
 $items_str 			= $_GET["items_str"];
 $checkout_date 	= $_GET["checkout_date"];
@@ -23,8 +13,6 @@ $return_date 		= $_GET["return_date"];
 $checkout_time 	= $_GET["checkout_time"];
 $return_time 		= $_GET["return_time"];
 $notes					= $_GET["notes"];
-
-include 'dbsetup.php';
 
 $esc_client_id			= mysql_real_escape_string( $client_id );
 $esc_items_str			= mysql_real_escape_string( $items_str );
@@ -35,11 +23,6 @@ $esc_return_time		= mysql_real_escape_string( $return_time );
 $esc_notes					= mysql_real_escape_string( $notes );
 
 $item_ids = explode('_', $esc_items_str);
-
-// echo $esc_client_id . '<br/>';
-// echo $esc_items_str . '<br/>';
-// echo $esc_checkout_date . '<br/>';
-// echo $esc_return_date . '<br/>';
 
 $max_q =
 "SELECT max(checkout_id)
@@ -90,7 +73,7 @@ if ($qr == false) {
   echo "<h2>Inserting new checkout into database failed. Bad checkout data...</h2>";
   echo "SQL Query Details: " . $q . "<br/>";
 } else {
-  echo "<h2>Success.</h2>";
+  echo "<h2>Success. The following Checkout was added to the database:</h2>";
 }
 
 $t1 =
@@ -118,15 +101,15 @@ while ( $t1r = mysql_fetch_array($t1q)) {
   echo "Return Date/Time: ";
   echo $t1r['return_time'] . "<br/>";
   echo "Notes: ";
-  echo $t1r['notes'] . "<br/>";
+  echo $t1r[5] . "<br/>";
 }
 
+echo "Items: ";
 while ( $t2r = mysql_fetch_array( $t2q ) ) {
-  echo "Items: ";
   echo $t2r['name'] . "<br/>";
 }
-
 ?>
 
-</body>
-</html>
+</div>
+
+<?php include 'tail.php'; ?>
