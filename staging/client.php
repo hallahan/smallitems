@@ -9,7 +9,7 @@ $formatstr =
 	%s
 </p>';
 
-include 'dbsetup.php';
+include '../dbsetup.php';
 
 $esc = mysql_real_escape_string( $id );
 

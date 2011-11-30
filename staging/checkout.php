@@ -5,7 +5,7 @@ $checkout_time =	$_GET["checkout_time"];
 $return_time =		$_GET["return_time"];
 $notes =					$_GET["notes"];
 
-include 'dbsetup.php';
+include '../dbsetup.php';
 
 $formatstr = 
 '<h2>Checkout Date/Time:</h2>

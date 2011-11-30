@@ -1,0 +1,16 @@
+INSERT INTO checkout VALUES (5,15,NO,2011-11-30 14:08,2011-12-05 12:12,'test');
+
+INSERT INTO  `hallahan`.`checkout` (
+`checkout_id` ,
+`client_id` ,
+`returned` ,
+`checkout_time` ,
+`return_time` ,
+`notes`
+)
+VALUES (
+'5',  '15',  'NO',  '2011-11-30 14:08',  '2011-12-05 12:12',  'inserting from myphpadmin'
+);
+
+INSERT INTO `checkout` ( `checkout_id` , `client_id` , `returned` , `checkout_time` , `return_time` , `notes` ) 
+VALUES (`6`, `7`, `NO`, `2011-11-30 12:12`, `2011-12-07 12:12`, `nsss` );

@@ -230,7 +230,7 @@ function submitCheckout() {
 	}
 	window.location = './newcheckout_db.php?' +
 										'client_id=' + client_id +
-										'&items_str=' + items_str +
+										'&items_str=' + items.join("_") +
 										'&checkout_date=' + checkoutDate +
 										'&return_date=' + returnDate +
 										'&checkout_time=' + checkoutTime + 

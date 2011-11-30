@@ -9,7 +9,7 @@ $id=$_GET["id"];
 $formatstr = 
 '%s (%s)<br/>';
 
-include 'dbsetup.php';
+include '../dbsetup.php';
 
 $ids = explode('_', $id);
 
