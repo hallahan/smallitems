@@ -12,11 +12,11 @@ include 'start.php';
 <?php include("menu.php"); ?>
 
 <div id="wrapper">
-	<table>
-		<tr>
-			<th>Name</th>
-			<th>Type</th>
-			<th>Description</th>
+	<table class="i">
+		<tr class="i">
+			<th class="i">Name</th>
+			<th class="i">Type</th>
+			<th class="i">Description</th>
 		</tr>
 		<div id="item_tabledata">
 			<?php
@@ -27,10 +27,10 @@ include 'start.php';
 				if ( ($odd % 2) == 1) 
 					echo '<tr class = "odd">';
 				else
-					echo '<tr>';
-				echo '<td>' . $row['name'] . '</td>';
-				echo '<td>' . $row['type'] . '</td>';
-				echo '<td>' . $row['descr'] . '</td>';
+					echo '<tr class="i">';
+				echo '<td class="i">' . $row['name'] . '</td>';
+				echo '<td class="i">' . $row['type'] . '</td>';
+				echo '<td class="i">' . $row['descr'] . '</td>';
 				echo '</tr>';
 				
 				$odd = $odd + 1;

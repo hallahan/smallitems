@@ -1,16 +1,4 @@
-<html>
-<head>
-<meta content="en-us" http-equiv="Content-Language" />
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-
-<link href="style.css" rel="stylesheet" type="text/css" />
-
-<style type="text/css"></style>
-<title>Small Items Checkout</title>
-</head>
-<body>
-
-<?php include("menu.php"); ?>
+<?php include("head.php"); ?>
 
 <div id="middle">
 	<fieldset>
@@ -80,5 +68,5 @@
 		</form>
 	</fieldset>
 </div>
-</body>
-</html>
+
+<?php include 'tail.php'; ?>

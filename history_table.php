@@ -36,17 +36,17 @@ $r = mysql_query( $checkout_query );
 
 <?php include("menu.php"); ?>
 <div id="wrapper">
-	<table>
+	<table class="i">
 		<h1> <?php echo $header_name ?> </h1>
 		
-		<tr>
-			<th scope="col">First Name</th>
-			<th scope="col">Last Name</th>
-			<th scope="col">Items</th>
-			<th scope="col">Returned</th>
-			<th scope="col">Checkout Time</th>
-			<th scope="col">Return Time</th>
-			<th scope="col">Notes</th>
+		<tr class="i">
+			<th class="i" scope="col">First Name</th>
+			<th class="i" scope="col">Last Name</th>
+			<th class="i" scope="col">Items</th>
+			<th class="i" scope="col">Returned</th>
+			<th class="i" scope="col">Checkout Time</th>
+			<th class="i" scope="col">Return Time</th>
+			<th class="i" scope="col">Notes</th>
 		</tr>
 	
 		<?php 
@@ -56,12 +56,12 @@ $r = mysql_query( $checkout_query );
 			if ( ($odd % 2) == 1) 
 				echo '<tr class = "odd">';
 			else
-				echo '<tr>';
+				echo '<tr class="i">';
 				
-			echo '<td>' . $row['first_name'] . '</td>';
-			echo '<td>' . $row['last_name'] . '</td>';
+			echo '<td class="i">' . $row['first_name'] . '</td>';
+			echo '<td class="i">' . $row['last_name'] . '</td>';
 	
-			echo '<td>';
+			echo '<td class="i">';
 			//echo 'test';
 	
 			$coitems = itemsForCheckout( $row['checkout_id'] );
@@ -72,10 +72,10 @@ $r = mysql_query( $checkout_query );
 	
 			echo '</td>';
 			
-			echo '<td>' . $row['returned'] . '</td>';
-			echo '<td>' . $row['checkout_time'] . '</td>';
-			echo '<td>' . $row['return_time'] . '</td>';
-			echo '<td>' . $row['notes'] . '</td>';
+			echo '<td class="i">' . $row['returned'] . '</td>';
+			echo '<td class="i">' . $row['checkout_time'] . '</td>';
+			echo '<td class="i">' . $row['return_time'] . '</td>';
+			echo '<td class="i">' . $row['notes'] . '</td>';
 			echo '</tr>';
 
 			$odd++;
