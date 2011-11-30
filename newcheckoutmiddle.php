@@ -1,10 +1,7 @@
 <?php
 $formatstr = '<option value="%d" >%s</option>';
 
-$con = mysql_connect("db.cecs.pdx.edu","hallahan","sempervirens");
-if (!$con){die('could not connect to db: ' . mysql_error() );}
-
-mysql_select_db("hallahan",$con);
+include 'dbsetup.php';
 
 $cr = mysql_query( "SELECT * FROM client ORDER BY last_name, first_name;" );
 $ir = mysql_query( "SELECT * FROM item ORDER BY name, type;" );

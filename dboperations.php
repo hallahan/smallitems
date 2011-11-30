@@ -1,26 +1,20 @@
 <?php
 
-$con = mysql_connect("db.cecs.pdx.edu","hallahan","sempervirens");
-if (!$con)
-{
-  die('could not connect to db: ' . mysql_error() );
-}
-
-mysql_select_db("hallahan",$con);
+include 'dbsetup.php';
 
 // STRINGS FOR QUERIES
 $all_clients = "SELECT * FROM client;";
 $all_items = "SELECT * FROM item;";
 $all_checkouts = "SELECT * FROM checkout;";
 
-function itemsForCheckout( $checkout_id )
-{
-  $q = "SELECT *
-        FROM item
-        JOIN checkoutitem USING(item_id)
-        WHERE checkoutitem.checkout_id = " . $checkout_id . ";"
-  return $q;
-}
+// function itemsForCheckout( $checkout_id )
+// {
+//   $q = "SELECT *
+//         FROM item
+//         JOIN checkoutitem USING(item_id)
+//         WHERE checkoutitem.checkout_id = " . $checkout_id . ";"
+//   return $q;
+// }
 
 function printTable( $queryStr )
 {

@@ -5,9 +5,7 @@ $checkout_time =	$_GET["checkout_time"];
 $return_time =		$_GET["return_time"];
 $notes =					$_GET["notes"];
 
-$con = mysql_connect("db.cecs.pdx.edu","hallahan","sempervirens");
-if (!$con){die('could not connect to db: ' . mysql_error() );}
-mysql_select_db("hallahan",$con);
+include 'dbsetup.php';
 
 $formatstr = 
 '<h2>Checkout Date/Time:</h2>
