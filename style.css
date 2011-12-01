@@ -1,6 +1,6 @@
 body {
 	background-color: white;
-	font-family: 'News Cycle', "Apple Gothic", "Segoe UI Semibold", sans-serif;
+	font-family: 'Droid Sans', "Apple Gothic", "Segoe UI Semibold", sans-serif;
 }
 
 a {
@@ -63,7 +63,7 @@ ul.small {
 legend
         {
         font-weight:lighter;
-        font-family: 'News Cycle', "Apple Gothic", "Segoe UI Semibold", sans-serif;
+        font-family: 'Droid Sans', "Apple Gothic", "Segoe UI Semibold", sans-serif;
         text-align:left;
         /*margin-top:1em;*/
         color:#333;
@@ -117,7 +117,7 @@ h3 {
 	/*width: 400px;*/
 	margin-right: 0;
 	margin-left: 180px;
-	font-family: 'News Cycle', "Apple Gothic", "Segoe UI Semibold", sans-serif;
+	font-family: 'Droid Sans', "Apple Gothic", "Segoe UI Semibold", sans-serif;
 }
 
 #middle {
