@@ -1,8 +1,5 @@
-
 <?php
 $search_str=$_GET["search"];
-$formatstr = '<option value="%d" >%s</option>';
-
 include 'dbsetup.php';
 
 if($search_str) {

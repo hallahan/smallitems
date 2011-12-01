@@ -9,7 +9,7 @@ eg:
 $checkout_query = "SELECT * FROM checkout JOIN client USING( client_id ) ORDER BY checkout_time DESC;";
 
 That will give you the complete history of all checkouts in the database.
-
+You may instead provide a specialized query (i.e., for searches)...
 */
 
 include 'dbsetup.php';
@@ -79,5 +79,4 @@ $r = mysql_query( $checkout_query );
 	</table>
 </div>
 
-</body>
-</html>
+<?php include 'tail.php'; ?>
