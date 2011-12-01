@@ -1,16 +1,4 @@
-<html>
-<head>
-<meta content="en-us" http-equiv="Content-Language" />
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-
-<link href="style.css" rel="stylesheet" type="text/css" />
-
-<style type="text/css"></style>
-<title>Small Items Checkout - Add Client</title>
-</head>
-<body>
-
-<?php include("menu.php"); ?>
+<?php include 'head.php'; ?>
 
 <div id="middle">
 	<fieldset>
@@ -19,41 +7,41 @@
 		<form action = "addclient_db.php" method = "post">
 			<table class="silent">
 				<tr>
-					<td width="115">
+					<th width="115">
 						<label for="first_name">First Name:</label> 
-					</td>
+					</th>
 					<td width="180">
 						<input class="full" type="text" name="first_name" />
 					</td>
 				</tr>
 				<tr>
-					<td width="115">
+					<th width="115">
 						<label for="last_name">Last Name:</label>
-					</td>
+					</th>
 					<td width="180">
 						<input class="full" type="text" name="last_name" />
 					</td>
 				</tr>
 				<tr>	
-					<td width="115">	
+					<th width="115">	
 						<label for="psu_id">PSU ID:</label>
-					</td>
+					</th>
 					<td width="180">	
 						<input class="full" type="text" name="psu_id" />
 					</td>
 				</tr>
 				<tr>	
-					<td width="115">	
+					<th width="115">	
 						<label for="phone">Phone:</label>
-					</td>
+					</th>
 					<td width="180">	
 						<input class="full" type="text" name="phone" />
 					</td>
 				</tr>
 				<tr>	
-					<td width="115">	
+					<th width="115">	
 						<label for="email">Email:</label>
-					</td>
+					</th>
 					<td width="180">	
 						<input class="full" type="text" name="email" /> 
 					</td>
@@ -75,5 +63,5 @@
 		</form>
 	</fieldset>
 </div>
-</body>
-</html>
+
+<?php include 'tail.php'; ?>

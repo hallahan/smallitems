@@ -377,7 +377,7 @@ function submitCheckout() {
 				</tr>
 			</table>
 			<h2>Notes:</h2>
-			<textarea id="notes" rows="4" cols="55" placeholder="Details Regarding Checkout"></textarea>
+			<textarea id="notes" rows="4" cols="45" placeholder="Details Regarding Checkout"></textarea>
 			<table class="silent" align="right" >
 				<tr>
 					<td width="95">

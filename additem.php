@@ -7,17 +7,17 @@
 				
 			<table class="silent">
 				<tr>
-					<td width="115">
+					<th width="115">
 						<label for="name">Name:</label> 
-					</td>
+					</th>
 					<td width="180">
 						<input class = "full" type="text" name="name" /><br />
 					</td>
 				</tr>
 				<tr>
-					<td width="115">	
+					<th width="115">	
 						<label for="type">Type (optional):</label>
-					</td>
+					</th>
 					<td width="180">
 						<input type="radio" name="type" value="TYPE 1"/>TYPE 1<br />
 					</td>
