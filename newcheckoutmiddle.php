@@ -330,7 +330,7 @@ function submitCheckout() {
 				<tr>
 					<th width="115"><label for="cohh">Checkout Time:</label></th>
 					<td width="180">
-					<input type="text" class="w2em" id="cohh" name="cohh" value="" maxlength="2" placeholder="HH" />
+					<input type="text" class="w2em" id="#demo-1" name="#demo-1" value="" maxlength="2" placeholder="HH" />
 					:
 					<input type="text" class="w2em" id="com" name="comm" value="" maxlength="2" placeholder="MM" />
 					</td>

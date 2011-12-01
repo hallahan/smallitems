@@ -31,6 +31,27 @@
 	});
 	</script>
 	
+	<!-- timepicker stuff -->
+	<link rel="Stylesheet" media="screen" href="ui-timepickr/ui.core.css" /> 
+  <link rel="Stylesheet" media="screen" href="ui-timepickr/ui.timepickr.css" /> 
+  <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.js"></script>  -->
+  <!-- <script type="text/javascript" src="ui-timepickr/jquery.utils.js"></script>
+  <script type="text/javascript" src="ui-timepickr/jquery.strings.js"></script>
+  <script type="text/javascript" src="ui-timepickr/jquery.anchorHandler.js"></script>
+  <script type="text/javascript" src="ui-timepickr/jquery.ui.all.js"></script>  -->
+  <script type="text/javascript" src="ui-timepickr/ui.timepickr.js"></script>
+  
+  <script type="text/javascript">
+      $(function(){
+          //$('#test-1').timepickr({trigger: '#trigger-test'});
+        $('#demo-1').timepickr().focus();
+        $('#demo-2').timepickr({convention:12});
+        $('#demo-1').next().find('ol').show().find('li:eq(2)').mouseover();
+        // temporary fix..
+        $('.ui-timepickr ol:eq(0) li:first').mouseover();
+      });
+  </script>
+	
 </head>
 <body>
 
