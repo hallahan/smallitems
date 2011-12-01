@@ -1,7 +1,7 @@
 <?php include 'head.php'; ?>
 
 <div id="wrapper">
-<h1>Checkout Details</h1>
+<h1>Client Details</h1>
 
 <?php
 $id=$_GET["id"];
@@ -60,7 +60,12 @@ $row = mysql_fetch_array($res);
 	</tr>
 </table>
 
-<input type="button" onclick="del()" value="Edit"/>
+<br/>
+<?php 
+  $url = "'edit_client.php?id=" . $esc . "'";
+  echo '<input type="button" onclick="document.location = ' .
+          $url . '" value="Edit"/>';
+?>
 
 <h2>Client History</h2>
 </div>
@@ -70,7 +75,7 @@ $checkout_query =
 FROM checkout 
 JOIN client USING( client_id )
 WHERE client_id = " . $esc .
-"ORDER BY return_time;";
+" ORDER BY return_time;";
 
 include 'history_table.php';
 ?>

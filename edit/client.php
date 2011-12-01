@@ -1,6 +1,6 @@
 <?php
 $id = $_GET['id'];
-
+include 'head.php';
 include 'dbsetup.php';
 
 $esc = mysql_real_escape_string( $id );

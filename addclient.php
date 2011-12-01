@@ -6,7 +6,7 @@
 <link href="style.css" rel="stylesheet" type="text/css" />
 
 <style type="text/css"></style>
-<title>Small Items Checkout</title>
+<title>Small Items Checkout - Add Client</title>
 </head>
 <body>
 
