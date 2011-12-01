@@ -80,6 +80,7 @@ function selectClient(  ) {
 	}
 	xmlhttp.open("GET","staging/client.php?id="+client_id,true);
 	xmlhttp.send();
+
 	
 }
 
@@ -187,7 +188,6 @@ function selectItem() {
 
 function clearItems() {
 	items = new Array();
-
 	var xmlhttp;
 	if (window.XMLHttpRequest)
 	{// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -320,7 +320,7 @@ function submitCheckout() {
 				Time/Details
 			</legend>
 			
-			<table class="silent">
+			<table class="silent" id="both_times" >
 				<tr>
 					<th width="115"><label for="cohh">Checkout Date:</label></th>
 					<td width="180">
