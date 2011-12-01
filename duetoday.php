@@ -9,8 +9,9 @@ WHERE returned = 'NO' AND return_time >= CURDATE() AND return_time < DATE_ADD( C
 ORDER BY return_time;";
 ?>
 
+<div id="wrapper">
 <h1>Checkouts Due Today</h1>
-<body>
+</div>
 
 <?php include 'history_table.php'; ?>
 

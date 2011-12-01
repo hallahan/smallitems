@@ -9,8 +9,9 @@ WHERE returned = 'NO' AND return_time < NOW()
 ORDER BY return_time;";
 ?>
 
+<div id="wrapper">
 <h1>Overdue Checkouts</h1>
-<body>
+</div>
 
 <?php include 'history_table.php'; ?>
 
