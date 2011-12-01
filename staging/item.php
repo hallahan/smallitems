@@ -1,21 +1,14 @@
 <?php
-$id=$_GET["id"];
-
-
-// echo "TEST<br/>";
-// print_r($id);
-// echo "END_TEST<br/>";
+$id = $_GET["id"];
+$clear=$_GET["clear"];
 
 $formatstr = 
 '%s (%s)<br/>';
 
 include '../dbsetup.php';
 
-$ids = explode('_', $id);
-
-// echo "TEST<br/>";
-// print_r($ids);
-// echo "END_TEST<br/>";
+$ids = explode('_', mysql_real_escape_string($id) );
+$esc_clear = mysql_real_escape_string( $clear );
 
 $escs = array();
 foreach( $ids as $i ){
@@ -23,33 +16,24 @@ foreach( $ids as $i ){
 	array_push( $escs, $esc );
 }
 
-// $q=
-// "SELECT * FROM item 
-// WHERE item_id=" . array_shift( $escs );
-// 
-// foreach ($escs as $e ) {
-	// $q = $q . " OR item_id=" . $e;	
-// }
-// 
-// $q = $q . " ORDER BY name, type;";
-
-// $esc = mysql_real_escape_string( $id );
-
-foreach($escs as $e) {
-	$q=
-	"SELECT * FROM item 
-	WHERE item_id=" . $e . ";";
-	
-	$res = mysql_query( $q );
-	
-	while( $row = mysql_fetch_array($res) ) {
-		if ( $row['type']) {
-			printf($formatstr, $row['name'], $row['type']);
-		} else {
-			echo $row['name'] . '<br/>';
-		}
-	}
+if ( $esc_clear != TRUE ) {
+  foreach($escs as $e) {
+  	$q=
+  	"SELECT * FROM item 
+  	WHERE item_id=" . $e . ";";
+  	
+  	$res = mysql_query( $q );
+  	
+  	while( $row = mysql_fetch_array($res) ) {
+  		if ( $row['type']) {
+  			printf($formatstr, $row['name'], $row['type']);
+  		} else {
+  			echo $row['name'] . '<br/>';
+  		}
+  	}
+  }
+} else {
+  echo ' ';
 }
-
 
 ?>
