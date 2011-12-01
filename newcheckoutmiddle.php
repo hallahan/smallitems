@@ -89,30 +89,21 @@ var returnDate = null;
 var checkoutTime = null;
 var returnTime = null;
 function selectCheckout() {
-	checkoutDate_mm = 	document.getElementById("comm").value;
-	checkoutDate_dd = 	document.getElementById("codd").value;
-	checkoutDate_yr = 	document.getElementById("coyr").value;
+	checkoutDate = 	document.getElementById("datepicker").value;
+
 	checkoutTime_h = 		document.getElementById("cohh").value;
 	checkoutTime_m = 		document.getElementById("com").value;
-	returnDate_mm = 		document.getElementById("rtmm").value;
-	returnDate_dd = 		document.getElementById("rtdd").value;
-	returnDate_yr = 		document.getElementById("rtyr").value;
+	returnDate = 		document.getElementById("datepicker_return").value;
+
 	returnTime_h = 			document.getElementById("rthh").value;
 	returnTime_m = 			document.getElementById("rtm").value;
 	notes = 						document.getElementById("notes").value;
 	
-	if (checkoutDate_mm == "") {
-		alert("You must specify a checkout month.");
+	if (checkoutDate == "") {
+		alert("You must specify a checkout date.");
 		return;
 	}
-	if (checkoutDate_dd  == "") {
-		alert("You must specify a checkout day.");
-		return;
-	}
-	if (checkoutDate_yr  == "") {
-		alert("You must specify a checkout year.");
-		return;
-	}
+
 	if (checkoutTime_h  == "") {
 		alert("You must specify a checkout hour.");
 		return;
@@ -121,18 +112,11 @@ function selectCheckout() {
 		alert("You must specify a checkout minute.");
 		return;
 	}
-	if (returnDate_mm  == "") {
-		alert("You must specify a return month.");
+	if (returnDate  == "") {
+		alert("You must specify a return date.");
 		return;
 	}
-	if (returnDate_dd == "") {
-		alert("You must specify a return day.");
-		return;
-	}
-	if (returnDate_yr  == "") {
-		alert("You must specify a return year.");
-		return;
-	}
+	
 	if (returnTime_h  == "") {
 		alert("You must specify a return hour.");
 		return;
@@ -142,8 +126,6 @@ function selectCheckout() {
 		return;
 	}
 	
-	checkoutDate = checkoutDate_yr + '-' + checkoutDate_mm + '-' + checkoutDate_dd;
-	returnDate   = returnDate_yr + '-' + returnDate_mm + '-' + returnDate_dd;
 	checkoutTime = checkoutTime_h + ':' + checkoutTime_m;
 	returnTime = returnTime_h + ':' + returnTime_m;
 	
@@ -337,16 +319,12 @@ function submitCheckout() {
 			<legend>
 				Time/Details
 			</legend>
-			<!-- Checkout Date -->
+			
 			<table class="silent">
 				<tr>
-					<th width="115"><label for="comm">Checkout Date:</label></th>
+					<th width="115"><label for="cohh">Checkout Date:</label></th>
 					<td width="180">
-					<input type="text" class="w2em" id="comm" name="comm" value="" maxlength="2" placeholder="MM" />
-					/
-					<input type="text" class="w2em" id="codd" name="codd" value="" maxlength="2" placeholder="DD" />
-					/
-					<input type="text" class="w4em" id="coyr" name="coyr" value="" maxlength="4" placeholder="YYYY" />
+						<input type="text" class="w8em" id="datepicker" name="datepicker" value="" maxlength="10" placeholder="YYYY-MM-DD" />
 					</td>
 				</tr>
 				<tr>
@@ -358,13 +336,9 @@ function submitCheckout() {
 					</td>
 				</tr>
 				<tr>
-					<th width="115"><label for="rtmm">Return Date:</label></th>
+					<th width="115"><label for="cohh">Return Date:</label></th>
 					<td width="180">
-					<input type="text" class="w2em" id="rtmm" name="rtmm" value="" maxlength="2" placeholder="MM" />
-					/
-					<input type="text" class="w2em" id="rtdd" name="rtdd" value="" maxlength="2" placeholder="DD" />
-					/
-					<input type="text" class="w4em" id="rtyr" name="rtyr" value="" maxlength="4" placeholder="YYYY" />
+						<input type="text" class="w8em" id="datepicker_return" name="datepicker_return" value="" maxlength="10" placeholder="YYYY-MM-DD" />
 					</td>
 				</tr>
 				<tr>
@@ -394,45 +368,3 @@ function submitCheckout() {
 		&nbsp;
 	</p>
 </div>
-
-
-<script>
-	datePickerController.createDatePicker({
-		// Associate the three text inputs to their date parts
-		formElements : {
-			"coyr" : "%Y",
-			"comm" : "%m",
-			"codd" : "%d"
-		},
-		// Show the week numbers
-		showWeeks : true,
-		// Set a statusbar format
-		statusFormat : "%l, %F %d %Y",
-		// Fill the entire grid with dates
-		fillGrid : true,
-		// Enable the selection of dates not within the current month
-		// but rendered within the grid (as we used fillGrid:true)
-		constrainSelection : false
-	});
-
-</script>
-<script>
-	datePickerController.createDatePicker({
-		// Associate the three text inputs to their date parts
-		formElements : {
-			"rtyr" : "%Y",
-			"rtmm" : "%m",
-			"rtdd" : "%d"
-		},
-		// Show the week numbers
-		showWeeks : true,
-		// Set a statusbar format
-		statusFormat : "%l, %F %d %Y",
-		// Fill the entire grid with dates
-		fillGrid : true,
-		// Enable the selection of dates not within the current month
-		// but rendered within the grid (as we used fillGrid:true)
-		constrainSelection : false
-	});
-
-</script>

@@ -9,6 +9,28 @@
 
 <style type="text/css"></style>
 <title>Small Items Checkout</title>
+
+
+<link type="text/css" href="jquery/css/custom-theme/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+	<script src="jquery/development-bundle/jquery-1.6.2.js"></script>
+	<script src="jquery/development-bundle/ui/jquery.ui.core.js"></script>
+	<script src="jquery/development-bundle/ui/jquery.ui.widget.js"></script>
+	<script src="jquery/development-bundle/ui/jquery.ui.datepicker.js"></script>
+	
+	<script>
+	$(function() {
+		$( "#datepicker" ).datepicker({
+			dateFormat: "yy-mm-dd"
+		});
+	});
+
+	$(function() {
+		$( "#datepicker_return" ).datepicker({
+			dateFormat: "yy-mm-dd"
+		});
+	});
+	</script>
+	
 </head>
 <body>
 

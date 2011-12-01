@@ -47,8 +47,12 @@ h2 {
 
 p.small {
 	font-size:0.8em;
+	padding: 5px;
 }
 
+p {
+	padding: 5px;
+}
 
 /*
 ul.small {
@@ -111,6 +115,8 @@ h3 {
   line-height: 1.3em;
 
 }
+
+
 
 #wrapper {
 	/*border: thin #FFCC00 solid;*/
