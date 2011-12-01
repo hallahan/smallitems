@@ -73,6 +73,8 @@ $row = mysql_fetch_array($res);
 	<?php 
 	while( $i_row = mysql_fetch_array($i_res) ) { 
 	  echo "<li>" . $i_row['name'] . "</li>";
+	  if ($i_row['type'])
+	    echo "<ul><li>" . $i_row['type'] . "</li></ul>";
 	  if ($i_row['descr'])
 	    echo "<ul><li>" . $i_row['descr'] . "</li></ul>";
 	}
@@ -99,11 +101,25 @@ $row = mysql_fetch_array($res);
 			  <?php echo $row[5]; ?>
 			</td>
 	</tr>
+	<?php 
+	if ( $row['returned'] == 'YES' ) {
+	  echo '<tr>
+					<th>Returned:</th>
+					<td>
+			  	YES
+					</td>
+					</tr>';
+	}
+	?>
 </table>
 
 <br/>
-<input type="button" onclick="del()" value="Check In"/>
-
+<?php 
+  if ( $row['returned'] == 'NO' ) {
+    $url = "'checkin.php?id=" . $esc . "'";
+    echo '<input type="button" onclick="window.location=' . $url . '" value="Check In"/>';
+  }
+?>
 
 
 </div>

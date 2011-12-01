@@ -22,8 +22,10 @@ include 'start.php';
 			<?php
 			$odd = 0;
 			
-			while( $row = mysql_fetch_array($r) )
-			{
+			while( $row = mysql_fetch_array($r) ) {
+			  $detail_url = "'detail_item.php?id=" . $row['item_id'] . "'";
+			  echo '<tr onclick="document.location = ' . $detail_url . '"';
+			  
 				if ( ($odd % 2) == 1) 
 					echo '<tr class = "odd">';
 				else
