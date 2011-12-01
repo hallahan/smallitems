@@ -35,7 +35,6 @@ function searchClient( searchStr ) {
 
 <body>
 
-<?php include("menu.php"); ?>
 
 <div id="wrapper">
 	<h1>Clients</h1>

@@ -63,7 +63,17 @@ $row = mysql_fetch_array($res);
 <input type="button" onclick="del()" value="Edit"/>
 
 <h2>Client History</h2>
-
 </div>
+<?php 
+$checkout_query =
+"SELECT * 
+FROM checkout 
+JOIN client USING( client_id )
+WHERE client_id = " . $esc .
+"ORDER BY return_time;";
+
+include 'history_table.php';
+?>
+
 
 <?php include 'tail.php'; ?>
