@@ -17,7 +17,7 @@ $row = mysql_fetch_array($res);
 	<fieldset>
 		<legend>Edit Client</legend>
 	
-		<form action = "editclient_db.php" method = "post">
+		<form action = "edit_client_db.php?id=<?php echo $esc; ?>" method = "post">
 			<table class="silent">
 				<tr>
 					<td width="115">

@@ -21,7 +21,7 @@ $sql= "INSERT INTO client (first_name, last_name, psu_id, phone, email, notes)
 
 if ( mysql_query($sql,$con) )
 {
-   echo '<h1>Client Added</h1>';
+   echo '<h2>Client Added</h2>';
 }
 else
 {
