@@ -29,7 +29,7 @@ function searchClient() {
 	    document.getElementById("clientsearch_sel").innerHTML=xmlhttp.responseText;
 	  }
 	}
-	xmlhttp.open("GET","search/client_select.php?search="+searchStr,true);
+	xmlhttp.open("GET","search_client_select.php?search="+searchStr,true);
 	xmlhttp.send();
 }
 
@@ -53,7 +53,7 @@ function searchItem(  ) {
 	    document.getElementById("itemsearch_sel").innerHTML=xmlhttp.responseText;
 	  }
 	}
-	xmlhttp.open("GET","search/item_select.php?search="+searchStr,true);
+	xmlhttp.open("GET","search_item_select.php?search="+searchStr,true);
 	xmlhttp.send();
 	
 }

@@ -26,7 +26,7 @@ function searchClient( searchStr ) {
 	    document.getElementById("clients_tabledata").innerHTML=xmlhttp.responseText;
 	  }
 	}
-	xmlhttp.open("GET","search/client_table.php?search="+searchStr,true);
+	xmlhttp.open("GET","search_client_table.php?search="+searchStr,true);
 	xmlhttp.send();
 	
 }
