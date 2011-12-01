@@ -3,9 +3,7 @@
 $search_str=$_GET["search"];
 $formatstr = '<option value="%d" >%s</option>';
 
-
 include 'dbsetup.php';
-
 
 if($search_str) {
 	$esc = mysql_real_escape_string( $search_str );
@@ -20,7 +18,6 @@ if($search_str) {
 																" ORDER BY last_name, first_name;" );
 } else {
 	$res = mysql_query( "SELECT * FROM client ORDER BY last_name, first_name;" );
-		
 }
 	
 	

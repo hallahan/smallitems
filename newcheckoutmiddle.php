@@ -273,7 +273,7 @@ function submitCheckout() {
 				Client
 			</legend>
 			
-			<input class="most" type="text" id="clientsearch_txt" name="search" onkeyup="searchClient()" placeholder="Search Clients" />
+			<input class="most" type="text" id="clientsearch_txt" name="search" onkeyup="searchClient()" placeholder="Search clients..." />
 			
 			<select class="most" id="clientsearch_sel" name="clients" size="10" >
 				<?php
@@ -302,7 +302,7 @@ function submitCheckout() {
 				Item
 			</legend>
 			
-				<input class="most" id="itemsearch_txt" type="text" name="searchclient" onkeyup="searchItem()" placeholder="Search Items" />
+				<input class="most" id="itemsearch_txt" type="text" name="searchclient" onkeyup="searchItem()" placeholder="Search items..." />
 				
 				<select class="most" id="itemsearch_sel" multiple name="items" size="10" >
 					<?php

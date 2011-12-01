@@ -19,27 +19,37 @@ if($search_str) {
 } else {
 	$res = mysql_query( "SELECT * FROM client ORDER BY last_name, first_name;" );
 }
-	
-	
-	
-	
-$odd = 0;
-while( $row = mysql_fetch_array($res) )
-{
-	if ( ($odd % 2) == 1)
-		echo '<tr class = "odd">';
-	else
-		echo '<tr>';
-	echo '<td>' . $row['first_name'] . '</td>';
-	echo '<td>' . $row['last_name'] . '</td>';
-	echo '<td>' . $row['psu_id'] . '</td>';
-	echo '<td>' . $row['phone'] . '</td>';
-	echo '<td>' . $row['email'] . '</td>';
-	echo '<td>' . $row['notes'] . '</td>';
-	echo '</tr>';
-
-	$odd = $odd + 1;
-}
-
-
 ?>
+
+<table class="i">
+	<tr class="i">
+		<th class="i">First Name</th>
+		<th class="i">Last Name</th>
+		<th class="i">PSU ID</th>
+		<th class="i">Phone</th>
+		<th class="i">Email</th>
+		<th class="i">Notes</th>
+	</tr>
+		<?php
+		$odd = 0;
+		while( $row = mysql_fetch_array($res) ) {
+		  $detail_url = "'detail_client.php?id=" . $row['client_id'] . "'";
+		  echo '<tr onclick="document.location = ' . $detail_url . '"';
+		  
+			if ( ($odd % 2) == 1)
+				echo ' class = "odd">';
+			else
+				echo ' class="i">';
+			echo '<td class="i">' . $row['first_name'] . '</td>';
+			echo '<td class="i">' . $row['last_name'] . '</td>';
+			echo '<td class="i">' . $row['psu_id'] . '</td>';
+			echo '<td class="i">' . $row['phone'] . '</td>';
+			echo '<td class="i">' . $row['email'] . '</td>';
+			echo '<td class="i">' . $row['notes'] . '</td>';
+			echo '</tr>';
+
+			$odd = $odd + 1;
+		}
+		?>
+
+</table>

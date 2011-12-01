@@ -117,10 +117,6 @@ h3 {
 	/*width: 400px;*/
 	margin-right: 0;
 	margin-left: 180px;
-/*
-	left: 190;
-	right: 10;
-*/
 	font-family: "Apple Gothic", "Segoe UI Semibold", Helvetica, sans-serif;
 }
 
@@ -189,6 +185,12 @@ select.most {
   
 }
 
+input.tablesearch,
+select.tablesearch {
+  width: 50%;
+  font-size: 1.2em;
+}
+
 table.silent {
 	border-style: none;
 	vertical-align:top;
@@ -228,3 +230,8 @@ label {
         {
         width:17em;
         }
+ 
+.alignCenter{
+	text-align: center;
+}
+

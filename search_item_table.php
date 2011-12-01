@@ -18,21 +18,33 @@ if($search_str) {
 																" ORDER BY name, type;" );
 } else {
 	$res = mysql_query( "SELECT * FROM item ORDER BY name, type;" );
-		
 }
-	
-$odd = 0;
-while( $row = mysql_fetch_array($res) ) {
-	if ( ($odd % 2) == 1) 
-				echo '<tr class = "odd">';
-			else
-				echo '<tr>';
-			echo '<td>' . $row['name'] . '</td>';
-			echo '<td>' . $row['type'] . '</td>';
-			echo '<td>' . $row['descr'] . '</td>';
-			echo '</tr>';
-			
-			$odd = $odd + 1;
-}
-
 ?>
+
+<table class="i">
+	<tr class="i">
+		<th class="i">Name</th>
+		<th class="i">Type</th>
+		<th class="i">Description</th>
+
+	</tr>
+		<?php
+		$odd = 0;
+		while( $row = mysql_fetch_array($res) ) {
+		  $detail_url = "'detail_item.php?id=" . $row['item_id'] . "'";
+		  echo '<tr onclick="document.location = ' . $detail_url . '"';
+		  
+			if ( ($odd % 2) == 1)
+				echo ' class = "odd">';
+			else
+				echo ' class="i">';
+			echo '<td class="i">' . $row['name'] . '</td>';
+			echo '<td class="i">' . $row['type'] . '</td>';
+			echo '<td class="i">' . $row['descr'] . '</td>';
+			echo '</tr>';
+
+			$odd = $odd + 1;
+		}
+		?>
+
+</table>
