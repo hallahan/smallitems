@@ -203,6 +203,30 @@ function selectItem() {
 	
 }
 
+function clearItems() {
+	items = new Array();
+
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	
+	xmlhttp.onreadystatechange=function()
+	{
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	  {
+	    document.getElementById("staging_item").innerHTML=xmlhttp.responseText;
+	  }
+	}
+	xmlhttp.open("GET","staging/item.php?clear=TRUE", true);
+	xmlhttp.send();
+}
+
 function submitCheckout() {
 	if (client_id == null) {
 		alert("You must select a client.");
@@ -248,36 +272,25 @@ function submitCheckout() {
 			<legend>
 				Client
 			</legend>
-			<table class="silent">
-				<tr>
-
-					<!-- <form name="clientsearch_frm" onSubmit="searchClient()"> -->
-						<td width="300">
-						<input class="full" type="text" id="clientsearch_txt" name="search" onkeyup="searchClient()" />
-						</td>
-						<td width="95">
-						<input class="full" id = "clientsearch_btn" type="button" value="Search" onclick="searchClient()" />
-						</td>
-					<!-- </form> -->
-				</tr>
-				<tr>
-					<td width="300">
-					<select class="full" id="clientsearch_sel" name="clients" size="10" >
-						<?php
-							while( $row = mysql_fetch_array($cr) ) {
-								$full_name = $row['first_name'] . ' ' . $row['last_name'];
-								printf( $formatstr, $row['client_id'], $full_name );
-							}
-						?>
-					</select></td>
-					<td width="95">
-					<input class="full" type="button" value="Add New Client" />
-					</td>
-				</tr>
-			</table>
-			<br/>
+			
+			<input class="most" type="text" id="clientsearch_txt" name="search" onkeyup="searchClient()" placeholder="Search Clients" />
+			
+			<select class="most" id="clientsearch_sel" name="clients" size="10" >
+				<?php
+					while( $row = mysql_fetch_array($cr) ) {
+						$full_name = $row['first_name'] . ' ' . $row['last_name'];
+						printf( $formatstr, $row['client_id'], $full_name );
+					}
+				?>
+			</select>
+			
+			<br/><br/>
+			
 			<table class="silent" align="right" >
 				<tr>
+					<td width="95">
+					<input class="full" type="button" value="Add New Client" onclick="window.location='addclient.php'" />
+					</td>
 					<td width="95">
 					<input class="full" type="button" value="Select" onclick="selectClient()" />
 					</td>
@@ -288,39 +301,31 @@ function submitCheckout() {
 			<legend>
 				Item
 			</legend>
-			<table class="silent">
-				<tr>
-					<td width="300">
-					<input class="full" id="itemsearch_txt" type="text" name="searchclient" onkeyup="searchItem()"/>
-					</td>
-					<td width="95">
-					<input class="full" id="itemsearch_btn" type="button" value="Search" onclick="searchItem()" />
-					</td>
-				</tr>
-				<tr>
-					<td width="300">
-					<select class="full" id="itemsearch_sel" multiple name="items" size="10" >
-						<?php
-							while( $row = mysql_fetch_array($ir) ) {
-								$item_name = $row['name'];
-								$item_type = $row['type'];
-								if ( $item_type ) {
-									$item_name = $item_name . '(' . $item_type . ')';
-								}
-								printf( $formatstr, $row['item_id'], $item_name );
+			
+				<input class="most" id="itemsearch_txt" type="text" name="searchclient" onkeyup="searchItem()" placeholder="Search Items" />
+				
+				<select class="most" id="itemsearch_sel" multiple name="items" size="10" >
+					<?php
+						while( $row = mysql_fetch_array($ir) ) {
+							$item_name = $row['name'];
+							$item_type = $row['type'];
+							if ( $item_type ) {
+								$item_name = $item_name . '(' . $item_type . ')';
 							}
-						?>
-					</select></td>
-					<td width="95">
-					<input class="full" type="button" value="Add New Item" />
-					</td>
-				</tr>
-			</table>
-			<br/>
+							printf( $formatstr, $row['item_id'], $item_name );
+						}
+					?>
+				</select>
+					
+			<br/><br/>
+			
 			<table class="silent" align="right" >
 				<tr>
 					<td width="95">
-					<input class="full" type="button" value="Clear"/>
+					<input class="full" type="button" value="Add New Item" onclick="window.location='additem.php'" />
+					</td>
+					<td width="95">
+					<input class="full" type="button" value="Clear" onclick="clearItems()" />
 					</td>
 					<td width="95">
 					<input class="full" type="button" value="Add" onclick="selectItem()" />

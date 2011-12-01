@@ -23,8 +23,8 @@
 		
 		<table align="right" >
 				<tr>
-					<td width="80">
-						<input type="button" value="Submit" onclick="submitCheckout()"/>
+					<td width="95">
+						<input class="full" type="button" value="Submit" onclick="submitCheckout()"/>
 					</td>
 				</tr>
 		 </table>
