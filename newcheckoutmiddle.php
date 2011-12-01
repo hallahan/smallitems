@@ -270,7 +270,7 @@ function submitCheckout() {
 			
 			<table class="silent" align="right" >
 				<tr>
-					<td width="95">
+					<td width="100">
 					<input class="full" type="button" value="Add New Client" onclick="window.location='addclient.php'" />
 					</td>
 					<td width="95">
