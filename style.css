@@ -42,7 +42,7 @@ h2 {
 	color: #666;
 	text-shadow: lightgray 2px 2px 4px;
 	font-weight: lighter;
-	font-size:1.0em;
+	font-size:1.2em;
 }
 
 p.small {
@@ -87,9 +87,11 @@ fieldset
         
 
 h3 {
-	font-family: "Apple Gothic", "Segoe UI Semibold", Helvetica, sans-serif;
-	color: black;
-	text-shadow: lightgray 1px 1px 2px;
+	text-align: left;
+  color: #666;
+  text-shadow: lightgray 2px 2px 4px;
+  font-weight: lighter;
+  font-size:1.0em;
 }
 
 #top {
@@ -192,6 +194,13 @@ table.silent {
 table.silent td {
 	vertical-align: top;
 	text-align:left;
+}
+
+table.silent th {
+	text-align:right;
+	color: #333;
+  text-shadow: lightgray 2px 2px 4px;
+  font-weight: lighter;
 }
 
 label {

@@ -335,7 +335,7 @@ function submitCheckout() {
 			<!-- Checkout Date -->
 			<table class="silent">
 				<tr>
-					<td width="115"><label for="comm">Checkout Date:</label></td>
+					<th width="115"><label for="comm">Checkout Date:</label></th>
 					<td width="180">
 					<input type="text" class="w2em" id="comm" name="comm" value="" maxlength="2" placeholder="MM" />
 					/
@@ -345,7 +345,7 @@ function submitCheckout() {
 					</td>
 				</tr>
 				<tr>
-					<td width="115"><label for="cohh">Checkout Time:</label></td>
+					<th width="115"><label for="cohh">Checkout Time:</label></th>
 					<td width="180">
 					<input type="text" class="w2em" id="cohh" name="cohh" value="" maxlength="2" placeholder="HH" />
 					:
@@ -353,7 +353,7 @@ function submitCheckout() {
 					</td>
 				</tr>
 				<tr>
-					<td width="115"><label for="rtmm">Return Date:</label></td>
+					<th width="115"><label for="rtmm">Return Date:</label></th>
 					<td width="180">
 					<input type="text" class="w2em" id="rtmm" name="rtmm" value="" maxlength="2" placeholder="MM" />
 					/
@@ -363,7 +363,7 @@ function submitCheckout() {
 					</td>
 				</tr>
 				<tr>
-					<td width="115"><label for="rthh">Return Time:</label></td>
+					<th width="115"><label for="rthh">Return Time:</label></th>
 					<td width="180">
 					<input type="text" class="w2em" id="rthh" name="rthh" value="" maxlength="2" placeholder="HH" />
 					:
@@ -371,8 +371,8 @@ function submitCheckout() {
 					</td>
 				</tr>
 			</table>
-			<label for="notes">Notes:</label>
-			<textarea id="notes" rows="4" cols="45" placeholder:"Details Regarding Checkout"></textarea>
+			<h2>Notes:</h2>
+			<textarea id="notes" rows="4" cols="55" placeholder="Details Regarding Checkout"></textarea>
 			<table class="silent" align="right" >
 				<tr>
 					<td width="95">

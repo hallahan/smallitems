@@ -2,21 +2,21 @@
 	<fieldset>
 		<legend>Staging</legend>
 		
-		<h2>Client:</h2>
+		<h3>Client:</h3>
 			<div id="staging_client">
 			</div>
 		
 		<p class="small">
 		</p>
 		
-		<h2>Items:</h2>
+		<h3>Items:</h3>
 			<div id="staging_item">
 			</div>
 
 		<div id="staging_checkout">
-			<h2>Checkout Date/Time:</h2>	
-			<h2>Return Date/Time:</h2>			
-			<h2>Notes:</h2>
+			<h3>Checkout Date/Time:</h3>	
+			<h3>Return Date/Time:</h3>			
+			<h3>Notes:</h3>
 		</div>
 				
 		<br/>

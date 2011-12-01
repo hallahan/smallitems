@@ -8,13 +8,13 @@ $notes =					$_GET["notes"];
 include '../dbsetup.php';
 
 $formatstr = 
-'<h2>Checkout Date/Time:</h2>
+'<h3>Checkout Date/Time:</h3>
 	%s<br/>
 	%s
-<h2>Return Date/Time:</h2>
+<h3>Return Date/Time:</h3>
 	%s<br/>
 	%s
-<h2>Notes:</h2>
+<h3>Notes:</h3>
 	%s';
 
 $esc_cod = mysql_real_escape_string( $checkout_date );

@@ -53,10 +53,12 @@ $r = mysql_query( $checkout_query );
  		$odd = 0;
 		while( $row = mysql_fetch_array($r) )
 		{
+		  $detail_url = "'detail_checkout.php?id=" . $row['checkout_id'] . "'";
+		  echo '<tr onclick="document.location = ' . $detail_url . '"';
 			if ( ($odd % 2) == 1) 
-				echo '<tr class = "odd">';
+				echo ' class = "odd">';
 			else
-				echo '<tr class="i">';
+				echo ' class="i">';
 				
 			echo '<td class="i">' . $row['first_name'] . '</td>';
 			echo '<td class="i">' . $row['last_name'] . '</td>';
@@ -77,7 +79,6 @@ $r = mysql_query( $checkout_query );
 			echo '<td class="i">' . $row['return_time'] . '</td>';
 			echo '<td class="i">' . $row[5] . '</td>';
 			echo '</tr>';
-
 			$odd++;
 		}
 		?>
