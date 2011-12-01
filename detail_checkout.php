@@ -25,7 +25,14 @@ FROM checkout
 JOIN client USING(client_id)
 WHERE checkout_id=" . $esc . ";";
 
+$i_q = "SELECT *
+        FROM item
+        JOIN checkoutitem USING(item_id)
+        WHERE checkoutitem.checkout_id = " . $esc . ";";
+
 $res = mysql_query( $q );
+$i_res = mysql_query( $i_q );
+
 $row = mysql_fetch_array($res);
 ?>
 
@@ -62,18 +69,43 @@ $row = mysql_fetch_array($res);
 
 <h2>Items</h2>
 
-<table class="silent" align="right" >
+<ul>
+	<?php 
+	while( $i_row = mysql_fetch_array($i_res) ) { 
+	  echo "<li>" . $i_row['name'] . "</li>";
+	  if ($i_row['descr'])
+	    echo "<ul><li>" . $i_row['descr'] . "</li></ul>";
+	}
+	?>
+</ul>
+
+<h2>Checkout</h2>
+<table class="silent">
 	<tr>
-		<td width="95">
-		<input class="full" type="button" onclick="del()" value="Delete"/>
+		<th>Checkout:</th>
+		<td>
+			<?php echo $row['checkout_time']; ?>
 		</td>
-		<td width="95">
-		<input class="full" type="button" onclick="edit()" value="Edit"/>
-		</td>
+	</tr>
+	<tr>
+		<th>Return:</th>
+			<td>
+			  <?php echo $row['return_time']; ?>
+			</td>
+	</tr>
+	<tr>
+		<th>Notes:</th>
+			<td>
+			  <?php echo $row[5]; ?>
+			</td>
 	</tr>
 </table>
 
-</fieldset>
+<br/>
+<input type="button" onclick="del()" value="Check In"/>
+
+
+
 </div>
 
 <?php include 'tail.php'; ?>

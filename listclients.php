@@ -1,10 +1,8 @@
 <?php
-
+include 'head.php';
 include 'dbsetup.php';
 
 $r = mysql_query( "SELECT * FROM client;" );
-
-include 'start.php';
 ?>
 
 <script type="text/javascript">
@@ -42,6 +40,7 @@ function searchClient( searchStr ) {
 <div id="wrapper">
 	<h1>Clients</h1>
 <!-- 	<input type="text" name="client_search" onkeyup="searchClient(this.value)"/> -->
+	
 	<table class="i">
 		<tr class="i">
 			<th class="i">First Name</th>
@@ -54,12 +53,14 @@ function searchClient( searchStr ) {
 		<div id="clients_tabledata">
 			<?php
 			$odd = 0;
-			while( $row = mysql_fetch_array($r) )
-			{
+			while( $row = mysql_fetch_array($r) ) {
+			  $detail_url = "'detail_client.php?id=" . $row['client_id'] . "'";
+			  echo '<tr onclick="document.location = ' . $detail_url . '"';
+			  
 				if ( ($odd % 2) == 1)
-					echo '<tr class = "odd">';
+					echo ' class = "odd">';
 				else
-					echo '<tr class="i">';
+					echo ' class="i">';
 				echo '<td class="i">' . $row['first_name'] . '</td>';
 				echo '<td class="i">' . $row['last_name'] . '</td>';
 				echo '<td class="i">' . $row['psu_id'] . '</td>';

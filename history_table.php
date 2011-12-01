@@ -3,7 +3,6 @@
 /*
 REQUIRED VARS PRE SET:
   $checkout_query (string)
-  $header_name    (string)
 This is a macro file of sorts. For this to work, define the string
 $checkout_query with a query selecting * from checkout joined with client.
 eg:
@@ -30,14 +29,8 @@ $r = mysql_query( $checkout_query );
 
 ?>
 
-
-
-<body>
-
-<?php include("menu.php"); ?>
 <div id="wrapper">
 	<table class="i">
-		<h1> <?php echo $header_name ?> </h1>
 		
 		<tr class="i">
 			<th class="i" scope="col">First Name</th>
