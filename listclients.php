@@ -2,7 +2,7 @@
 include 'head.php';
 include 'dbsetup.php';
 
-$res = mysql_query( "SELECT * FROM client;" );
+$res = mysql_query( "SELECT * FROM client ORDER BY last_name, first_name;" );
 ?>
 
 <script type="text/javascript">
