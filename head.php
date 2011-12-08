@@ -1,3 +1,10 @@
+<?php 
+session_start(); 
+if(!isset($_SESSION['loggedin']))
+{
+  header( 'location: login.php' ); 
+}
+?>
 <html>
 <head>
 <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>

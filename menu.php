@@ -9,6 +9,7 @@
 		<a href="listitems.php">List Items</a><br/>
 		<a href="addclient.php">Add Client</a><br/>
 		<a href="additem.php">Add Item</a><br/>
+		<a href="logout.php">Logout</a>
 	</fieldset>
 	<br/>
 

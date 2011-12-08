@@ -1,5 +1,5 @@
 <?php
-$local = false;
+$local = true;
 
 if ($local) {
 	$con = mysql_connect("localhost","root","sempervirens");

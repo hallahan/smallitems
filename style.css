@@ -143,6 +143,18 @@ h3 {
 	width:300px;
 }
 
+#login-vert {
+	position:absolute; 
+	top:50%;
+	height:300px; 
+	margin-top:-150px;
+	width:100%
+}
+#login-hori {
+	width: 300px;
+  margin-right: auto;
+  margin-left: auto;
+}
 /*#console {
 	border: thin #FFCC00 solid;
 	position: fixed;
