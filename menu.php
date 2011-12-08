@@ -9,7 +9,13 @@
 		<a href="listitems.php">List Items</a><br/>
 		<a href="addclient.php">Add Client</a><br/>
 		<a href="additem.php">Add Item</a><br/>
+<?php 
+  if ( $_SESSION['user_access'] == 'DEV' || $_SESSION['user_access'] == 'ADM' ) {
+    echo '<a href="adduser.php">Add User</a><br/>';
+  }
+?>
 		<a href="logout.php">Logout</a>
+
 	</fieldset>
 	<br/>
 
