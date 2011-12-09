@@ -1,6 +1,6 @@
 <?php
 include 'dbsetup.php';
-include 'start.php';
+include 'head.php';
 ?>
 
 <body>
